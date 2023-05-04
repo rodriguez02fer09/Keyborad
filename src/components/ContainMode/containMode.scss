@@ -1,0 +1,27 @@
+.containMode{
+width: 327px;
+height: 32px;
+border: 1px solid lightseagreen;
+margin: 24px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+position: relative;
+
+.containMode-line {
+    width: 1px;
+    height: 32px;
+    position: relative;
+    right: 98px;
+
+}
+
+.IconBook{
+    width:28px ;
+    height: 32px;
+   
+}
+    
+
+}

@@ -1,4 +1,10 @@
 .layout{
-
-    background: plum;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: var(--six-color);
 }

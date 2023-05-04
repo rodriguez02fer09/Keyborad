@@ -1,0 +1,23 @@
+.modeFonts{
+width: 98px;
+height: 24px;
+
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+li{
+    list-style: none;
+    font-family: 'Lora';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 171% */
+
+text-align: right;
+color: var(--tertiary-color);
+}
+
+}
