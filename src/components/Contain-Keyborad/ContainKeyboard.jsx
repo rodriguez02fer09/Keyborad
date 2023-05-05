@@ -3,6 +3,8 @@ import "./containKeyboard.scss"
 import ContainMode from "../ContainMode/ContainMode"
 import  SearchPrompt  from "../SearchPrompt/SearchPrompt"
 import ContainTitleButton from "../ContainTitleButton/ContainTitleButton"
+import Section from "../Section/Section";
+import ContainMeaning from "../ContainMeaning/ContainMeaning"
 
 const ContainKeyboard = () => {
   return(
@@ -10,6 +12,8 @@ const ContainKeyboard = () => {
       <ContainMode/>
       <SearchPrompt/>
       <ContainTitleButton/>
+      <Section/>
+      <ContainMeaning/>
     </div>
   )
 }

@@ -1,0 +1,25 @@
+.main-section {
+  width: 327px;
+  height: 23px;
+  margin-top: 31px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__container {
+    width: 42px;
+    height: 23px;
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      /* identical to box height */
+      /* 2D2D2D */
+      color: #2d2d2d;
+    }
+    
+  }
+}
