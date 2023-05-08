@@ -1,13 +1,14 @@
-.containKeyboard{
-    width: 370px;
-    height:810px;
-    background: powderblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-background:var(--six-color) ;
-.containKeyboard-img{
+.containKeyboard {
+  width: 370px;
+  height: 910px;
+  background: powderblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--six-color);
+  overflow-y: scroll ;
+  .containKeyboard-img {
     width: 327px;
     height: 1px;
-}
+  }
 }
