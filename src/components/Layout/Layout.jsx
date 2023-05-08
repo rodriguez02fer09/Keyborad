@@ -1,6 +1,6 @@
 import React from "react";
 import "./layout.scss"
-import ContainKeyboard from "../Contain-Keyborad/ContainKeyboard"
+import ContainKeyboard from "../ContainKeyborad/ContainKeyboard"
 
 
 const Layout = () => {

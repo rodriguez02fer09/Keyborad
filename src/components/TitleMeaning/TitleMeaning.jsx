@@ -3,7 +3,7 @@ import "./titleMeaning.scss"
 
 const TitleMeaning = ()=>{
     return(
-        <div>
+        <div className="titleMeaning">
             <p>Meaning</p>
         </div>
     )
