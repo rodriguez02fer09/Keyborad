@@ -1,11 +1,11 @@
-.main-title {
+.title {
   width: 128px;
   height: 64px;
   display: flex;
   flex-direction: column;
   justify-content: end;
 
-  &__container {
+ .container {
     width: 128px;
     height: 64px;
  
@@ -17,10 +17,10 @@ font-style: normal;
       line-height: 34px;
       /* identical to box height */
       /* 2D2D2D */
-      color: var(--tertiary-color);
+  
     }
   }
-  &__idioma{
+ .idioma{
     width: 72px;
     height: 24px;
     margin-bottom: 31px;

@@ -1,15 +1,16 @@
-import React from "react";
+import React ,{useContext}from "react";
 import "./title.scss";
+import { ThemeContext } from "../../context/index";
 
-const Title = ({ isDark }) => {
-  const defaultClass = `main-title`;
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
+
+const Title = () => {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className={`${defaultClass} ${custonClass}`}>
-      <div className={`${defaultClass}__container ${custonClass}__container`}>
+    <div className={`title title--${theme}`}>
+      <div className="container">
         <h1>Keyboard</h1>
       </div>
-      <div className={`${defaultClass}__idioma ${custonClass}__idioma `}>
+      <div className="idioma">
         <p>/ˈkiːbɔːd/</p>
       </div>
     </div>

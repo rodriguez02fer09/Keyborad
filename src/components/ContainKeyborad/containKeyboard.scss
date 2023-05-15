@@ -11,4 +11,14 @@
     width: 327px;
     height: 1px;
   }
+
+  &--light{
+    background: var(--six-color);
+   
+  }
+
+  &--dark{
+    background: var(--primary-color);
+    color: white;
+  }
 }

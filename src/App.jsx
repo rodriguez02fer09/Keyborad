@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.scss";
 import Layout from "./components/Layout/Layout";
+import { ThemeProvider } from "./context"
 
 
-
-const App = () => {
+export default function App (){
   return (
-    <div className="App">
-<Layout/>
-    </div>
+      <ThemeProvider >
+        <Layout/>
+      </ThemeProvider>
   );
 };
-
-export default App;

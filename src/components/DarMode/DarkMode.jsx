@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context/index";
 import "./darkMode.scss";
-import DarkModeNomal from "../../assets/dar-mode-normal.svg";
+import DarkModeNormal from "../../assets/dar-mode-normal.svg";
+import DarkModeDark from "../../assets/dark-mode-hover.svg";
 
 const DarkMode = () => {
+  const { toggleTheme, isDark } = useContext(ThemeContext);
+
   return (
-    <div className="main-darkMode">
-      <img src={DarkModeNomal} alt=""/>
+    <div className="main-darkMode" onClick={toggleTheme}>
+        <img src={ isDark() ? DarkModeDark :DarkModeNormal } />
     </div>
   );
 };

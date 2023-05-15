@@ -2,7 +2,7 @@
     width: 298px;
     height: 43px;
     margin:24px  53px 84px 24px;
-    &__source{
+    .source{
         width: 46px;
         height: 18px;
   
@@ -22,7 +22,7 @@ font-style: normal;
                
         }
     }
-    &__link{
+  .link{
         width: 271px;
         height: 18px;
         P{
@@ -40,5 +40,7 @@ font-style: normal;
             color: #2D2D2D;
                
         }
+    
     }
+    
 }

@@ -5,6 +5,7 @@ import Line from "../../assets/line.svg";
 import ModeFonts from "../ModeFonts/ModeFonts";
 import IconBook from "../../assets/iconBook.svg";
 
+
 const ContainMode = () => {
   return (
     <div className="containMode">

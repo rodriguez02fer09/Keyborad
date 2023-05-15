@@ -1,16 +1,16 @@
-import React from "react";
+import React ,{useContext}from "react";
 import "./section.scss";
 import LineSection from "../../assets/line-section.svg";
+import { ThemeContext } from "../../context/index";
 
-const Section = ({ isDark, text }) => {
-  const defaultClass = `main-section`;
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
+const Section = () => {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className={`${defaultClass} ${custonClass}`}>
-      <div className={`${defaultClass}__container ${custonClass}__container`}>
-        <p>{text}</p>
+    <div className={`main-section main-section--${theme}`}>
+      <div className="container">
+        <p>noun</p>
       </div>
-      <div className={`${defaultClass}__line ${custonClass}__line`}>
+      <div className="line">
         <img src={LineSection} alt="" />
       </div>
     </div>

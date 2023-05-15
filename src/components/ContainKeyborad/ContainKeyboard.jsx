@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./containKeyboard.scss"
 import ContainMode from "../ContainMode/ContainMode"
 import SearchPrompt  from "../SearchPrompt/SearchPrompt"
@@ -9,10 +9,13 @@ import Synonyms from "../Synonyms/Synonyms"
 import ContainMeaningVerb from "../ContainMeaningVerb/ContainMeaningVerb"
 import LineLong from "../../assets/line-long.svg"
 import MainSource from "../MainSource/MainSource"
+import {ThemeContext} from "../../context/index"
 
 const ContainKeyboard = () => {
+  const { theme } = useContext(ThemeContext)
+  
   return(
-    <div className="containKeyboard">
+    <div className={`containKeyboard containKeyboard--${theme}`}>
       <ContainMode/>
       <SearchPrompt/>
       <ContainTitleButton/>
