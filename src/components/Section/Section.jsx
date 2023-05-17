@@ -4,13 +4,14 @@ import LineSection from "../../assets/line-section.svg";
 import { ThemeContext } from "../../context/index";
 
 const Section = () => {
+  const defaultClass = "main-section";
   const { theme } = useContext(ThemeContext)
   return (
-    <div className={`main-section main-section--${theme}`}>
-      <div className="container">
-        <p>noun</p>
+    <div className={`${defaultClass} ${defaultClass}--${theme}`}>
+      <div className={`${defaultClass}__container-p ${defaultClass}__container-p${theme}`}>
+        <p className={`${defaultClass}__container-p__p ${defaultClass}__container-p__p--${theme}`}>noun</p>
       </div>
-      <div className="line">
+      <div className={`${defaultClass}__line ${defaultClass}__line--${theme}`}>
         <img src={LineSection} alt="" />
       </div>
     </div>

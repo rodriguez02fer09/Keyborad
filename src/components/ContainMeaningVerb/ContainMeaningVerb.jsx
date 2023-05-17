@@ -5,12 +5,12 @@ import ContainMeaning from "../ContainMeaning/ContainMeaning"
 
 
 
-const ContainMeaningVerb = ({isDark ,text}) => {
+const ContainMeaningVerb = ({isDark }) => {
     const defaultClass = `main-containMeaningVerb`;
     const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
 return(
     <div className={`${defaultClass} ${custonClass}`}>
-<Section text = {text} />
+<Section />
 <ContainMeaning/>
     </div>
 )

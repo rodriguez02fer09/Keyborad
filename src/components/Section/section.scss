@@ -1,25 +1,41 @@
 .main-section {
   width: 327px;
   height: 23px;
-margin-bottom: 31px;
+  margin-bottom: 31px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
- .container {
-    width: 42px;
-    height: 23px;
-    p {
-      font-family: 'Inter';
-      font-style: normal;
+  &__container-p {
+    width: 36px;
+    height: 19px;
+    
+    &__p {
+      font-family: "Lora";
+      font-style: italic;
       font-weight: 700;
       font-size: 18px;
       line-height: 23px;
       /* identical to box height */
       /* 2D2D2D */
-
+  
     }
-    
+   
   }
+  &__line{
+    width: 266px;
+    height: 1px;
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  
+    &__img{
+      width: 266px;
+      height: 1px;
+      
+    }
+  }
+
 }

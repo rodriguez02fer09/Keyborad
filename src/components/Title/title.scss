@@ -1,13 +1,13 @@
 .title {
-  width: 128px;
-  height: 64px;
+  width: 149px;
+  height: 68px;
   display: flex;
   flex-direction: column;
   justify-content: end;
 
- .container {
-    width: 128px;
-    height: 64px;
+&__container {
+    width: 147px;
+    height: 39px;
  
     h1 {
       font-family: 'Inter';
@@ -23,7 +23,7 @@ font-style: normal;
  .idioma{
     width: 72px;
     height: 24px;
-    margin-bottom: 31px;
+
     p{
       font-family: 'Inter';
       font-style: normal;

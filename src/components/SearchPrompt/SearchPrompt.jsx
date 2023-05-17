@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./searchPrompt.scss";
 import Shape from "../../assets/shape.svg";
+import { ThemeContext } from "../../context/index";
 
-const SearchPrompt = ({ isDark }) => {
-  const defaultClass = `search-prompt`;
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
+const SearchPrompt = () => {
+  const { theme } = useContext(ThemeContext);
+  const defaultClass = "search-prompt";
   return (
-    <div className={`${defaultClass} ${custonClass}`}>
-      <div className={`${defaultClass}__container ${custonClass}__container`}>
+    <div className={`${defaultClass} ${defaultClass}--${theme}`}>
+      <div
+        className={`${defaultClass}__container-input ${defaultClass}__container-input--${theme}`}
+      >
         <input
-          className={`${defaultClass}__container-input ${custonClass}__container-input `}
-          type="text" placeholder = "Keyboard"
+          className={`${defaultClass}__container-input__input ${defaultClass}__container-input__input--${theme}`}
+          type="text"
+          placeholder="Keyboard"
         />
-        <img
-          className={`${defaultClass}__container-img ${custonClass}__container-img`}
-          src={Shape}
-          alt="shape"
-        />
+      </div>
+      <div
+        className={`${defaultClass}__container-img ${defaultClass}__container-img--${theme}`}
+      >
+        <img className={`${defaultClass}__container-img__img ${defaultClass}__container-img__img--${theme}`} src={Shape} alt="shape" />
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const ContainKeyboard = () => {
       <ContainMode/>
       <SearchPrompt/>
       <ContainTitleButton/>
-      <Section text="noun"/>
+      <Section />
       <ContainMeaning/>
       <Synonyms/>
       <ContainMeaningVerb text="verb"/>

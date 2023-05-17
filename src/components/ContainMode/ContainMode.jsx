@@ -1,7 +1,7 @@
 import React from "react";
 import "./containMode.scss";
 import DarkMode from "../DarMode/DarkMode";
-import Line from "../../assets/line.svg";
+import LineVertical from "../../assets/line-vertical.svg";
 import ModeFonts from "../ModeFonts/ModeFonts";
 import IconBook from "../../assets/iconBook.svg";
 
@@ -15,7 +15,7 @@ const ContainMode = () => {
       <ModeFonts />
       <DarkMode />
       <div className="containMode-line">
-        <img src={Line} alt="" />
+        <img src={LineVertical} alt="" />
       </div>
     </div>
   );
