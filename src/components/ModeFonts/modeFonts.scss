@@ -1,23 +1,11 @@
-
-.conten-itemFont{
+main-modeFonts {
   width: 98px;
   height: 24px;
-  background: #FFFFFF;
-border: 1px solid deeppink;
-position:absolute;
-border-radius: 5px;
-left: 120px;
+  background: #ffffff;
+  border: 1px solid deeppink;
+  position: absolute;
+  border-radius: 5px;
+  left: 120px;
   top: 24px;
-
-}
-p{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  /* identical to box height, or 133% */
-  /* 2D2D2D */
-  color: #2D2D2D;
-  
+  position: fixed;
 }

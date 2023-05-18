@@ -3,11 +3,11 @@ import "./itemFont.scss";
 import List  from "../../assets/list-mode-fonts.svg";
 import { ThemeContext } from "../../context/index";
 
-const ItemFont = () => {
+const ItemFont = ({handlerOnClick}) => {
   const { theme } = useContext(ThemeContext);
   const defaultClass = "main-itemFont";
   return (
-    <div className={`${defaultClass} ${defaultClass}--${theme}`}>
+    <div className={`${defaultClass} ${defaultClass}--${theme}`} onClick={handlerOnClick}>
       <div
         className={`${defaultClass}__container-input ${defaultClass}__container-input--${theme}`}
       >
