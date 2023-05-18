@@ -1,21 +1,23 @@
-.modeFonts {
+
+.conten-itemFont{
   width: 98px;
   height: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  background: #FFFFFF;
+border: 1px solid deeppink;
+position:absolute;
+border-radius: 5px;
+left: 120px;
+  top: 24px;
 
-  li {
-    font-family: "Inter";
-    font-style: normal;
-    list-style: none;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 24px;
-    /* identical to box height, or 171% */
-
-    text-align: right;
-    color: var(--tertiary-color);
-  }
+}
+p{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  /* 2D2D2D */
+  color: #2D2D2D;
+  
 }

@@ -19,8 +19,12 @@
       line-height: 23px;
       /* identical to box height */
       /* 2D2D2D */
-  
+      &--dark{
+     
+        color: white;
+      }
     }
+  
    
   }
   &__line{
@@ -30,12 +34,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
-  
-    &__img{
-      width: 266px;
-      height: 1px;
-      
-    }
+  img{
+    width: 266px;
+    height: 1px;
+  }
+   
   }
 
 }

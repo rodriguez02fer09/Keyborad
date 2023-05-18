@@ -1,0 +1,51 @@
+.main-itemFont{
+  width: 98px;
+  height: 24px;
+  position: relative;
+
+  &__container-input {
+    width: 98px;
+    height: 24px;
+
+    &__input {
+      width: 98px;
+      height: 24px;
+      border: none;
+
+      &::placeholder {
+        font-family: "Lora";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        // /* identical to box height, or 171% */
+
+        text-align: left;
+        padding-left: 20px;
+        // /* 2D2D2D */
+
+        color: #2d2d2d;
+      }
+      &--dark {
+        background: var(--primary-color);
+        border: none;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+  }
+  &__container-imagen {
+    width: 12px;
+    height: 6px;
+    bottom: 22px;
+    left: 78px;
+    position: relative;
+
+    &__img {
+      width: 12px;
+      height: 6px;
+    }
+  }
+}

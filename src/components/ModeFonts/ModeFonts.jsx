@@ -1,19 +1,14 @@
 import React from "react";
 import "./modeFonts.scss";
-import List from "../../assets/select-list.svg";
+
+// import ContItemFonts from "../ContItem-Fonts/ContItemFonts";
+import ItemFont from "../ItemFont/ItemFont";
 
 const ModeFonts = () => {
   return (
-    <div className="modeFonts">
-      <div>
-        <ul>
-          <li> Sans Serif</li>
-        </ul>
-      </div>
-      <div>
-        <img src={List} alt="" />
-      </div>
-    </div>
+   <div>
+    <ItemFont/>
+   </div>
   );
 };
 
