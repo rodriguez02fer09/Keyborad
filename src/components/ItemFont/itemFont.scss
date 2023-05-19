@@ -2,6 +2,9 @@
   width: 98px;
   height: 24px;
   position: relative;
+  cursor: pointer;
+
+
 
   &__container-input {
     width: 98px;
@@ -11,7 +14,8 @@
       width: 98px;
       height: 24px;
       border: none;
-
+        outline: none;
+      
       &::placeholder {
         font-family: "Lora";
         font-style: normal;
@@ -26,9 +30,11 @@
 
         color: #2d2d2d;
       }
+     
       &--dark {
         background: var(--primary-color);
         border: none;
+        color: white;
 
         &::placeholder {
           color: white;

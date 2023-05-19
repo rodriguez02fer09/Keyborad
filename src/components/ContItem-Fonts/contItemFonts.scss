@@ -2,30 +2,38 @@
   width: 98px;
   height: 92px;
   z-index: 99999999;
-  background: fuchsia;
   position: absolute;
-  background: #ffffff;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+background: white ;
+cursor: pointer;
 
-  &__container-listFonts {
- 
-   
+
+  &__container-listFont {
+    width: 98px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+
     &__p {
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
       line-height: 24px;
-      /* identical to box height, or 133% */
-      padding: 4px;
-      /* 2D2D2D */
+      padding: 3px;
 
-      color: #2d2d2d;
-     
     }
+  
+  }
+  &--dark{
+
+      background: #1F1F1F;
+      box-shadow: 0px 5px 30px #A445ED;
+      border-radius: 16px;
+   
+
+  
   }
 }
