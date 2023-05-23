@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import "./contItemFonts.scss";
 import { ThemeContext } from "../../context/index";
+import { FontContext } from "../../context/index";
 
-const ContItemFonts = ({ fonts, handlerClick }) => {
+const ContItemFonts = ({ fonts, handlerClick,currentFont  }) => {
+
   const { theme } = useContext(ThemeContext);
   const defaultClass = "contItemFonts";
+
   return (
     <div className={`${defaultClass} ${defaultClass}--${theme}`}>
       <div
@@ -12,13 +15,16 @@ const ContItemFonts = ({ fonts, handlerClick }) => {
       >
         {fonts.map(({ font }, index) => {
           return (
-            <div>
+            <div key={index}>
               <p
-                className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme} `}
+                className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme} 
+                ${font === currentFont ? "selected" : ""} 
+                `}
                 key={index}
                 onClick={() => {
-                  handlerClick(font)
+                  handlerClick(font);
                 }}
+                style={{ fontFamily: currentFont }}
               >
                 {font}
               </p>

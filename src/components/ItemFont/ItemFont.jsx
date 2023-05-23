@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import "./itemFont.scss";
 import List  from "../../assets/list-mode-fonts.svg";
 import { ThemeContext } from "../../context/index";
+import { FontContext } from "../../context/index";
 
 const ItemFont = ({handlerOnClick, value}) => {
+
+  //const { fontStyle, handleFontStyleChange } = useContext(FontContext);
   const { theme } = useContext(ThemeContext);
   const defaultClass = "main-itemFont";
   return (
@@ -16,6 +19,8 @@ const ItemFont = ({handlerOnClick, value}) => {
           type="text"
           placeholder="Serif"
           value={value}
+          // value={fontStyle}
+          // onChange={handleFontStyleChange}
         />
       </div>
       <div className={`${defaultClass}__container-imagen ${defaultClass}__container-imagen--${theme}`}>
