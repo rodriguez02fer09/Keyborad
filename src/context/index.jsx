@@ -6,18 +6,16 @@ export const ThemeContext = createContext();
 //contexto del style font
 export const FontContext = createContext();
 
-
-
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const isDark = () =>{
-    return theme === 'dark'
-  }
+  const isDark = () => {
+    return theme === "dark";
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>
@@ -27,22 +25,21 @@ export const ThemeProvider = ({ children }) => {
 };
 
 export const FontProvider = ({ children }) => {
-
-  const [fontStyle , setFontStyle] = useState('Sans Serif')
+  const [fontStyle, setFontStyle] = useState("Sans Serif");
 
   const handleFontStyleChange = (event) => {
-    setFontStyle(event.target.value);
+    debugger
+    setFontStyle(() => event.target.value);
   };
 
-  const isFontSelected = (font) => {
-     return font ===  currentFont
- };
-
-
-
-return (
-    <FontContext.Provider value={{fontStyle, handleFontStyleChange, isFontSelected }}>
+   const getFontStyle = () => {
+      return fontStyle
+   }
+  return (
+    <FontContext.Provider
+      value={{ getFontStyle, handleFontStyleChange  }}
+    >
       {children}
     </FontContext.Provider>
   );
-}
+};

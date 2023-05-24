@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import "./itemFont.scss";
-import List  from "../../assets/list-mode-fonts.svg";
-import { ThemeContext } from "../../context/index";
-import { FontContext } from "../../context/index";
+import List from "../../assets/list-mode-fonts.svg";
+import { ThemeContext, FontContext } from "../../context/index";
 
-const ItemFont = ({handlerOnClick, value}) => {
+const ItemFont = ({ handlerOnClick}) => {
 
-  //const { fontStyle, handleFontStyleChange } = useContext(FontContext);
+const { getFontStyle, handleFontStyleChange } = useContext(FontContext);
   const { theme } = useContext(ThemeContext);
+
   const defaultClass = "main-itemFont";
   return (
-    <div className={`${defaultClass} ${defaultClass}--${theme}`} onClick={handlerOnClick}>
+    <div
+      className={`${defaultClass} ${defaultClass}--${theme}`}
+      onClick={handlerOnClick}
+    >
       <div
         className={`${defaultClass}__container-input ${defaultClass}__container-input--${theme}`}
       >
@@ -18,13 +21,22 @@ const ItemFont = ({handlerOnClick, value}) => {
           className={`${defaultClass}__container-input__input  ${defaultClass}__container-input__input--${theme}`}
           type="text"
           placeholder="Serif"
-          value={value}
-          // value={fontStyle}
-          // onChange={handleFontStyleChange}
+          value={getFontStyle()}
+          onChange={(event) => {
+            debugger
+            handleFontStyleChange(event);
+          }}
+          style={{ fontFamily: getFontStyle()}}
         />
       </div>
-      <div className={`${defaultClass}__container-imagen ${defaultClass}__container-imagen--${theme}`}>
-        <img className={`${defaultClass}__container-imagen__img  ${defaultClass}__container-imagen__img--${theme}`}src={List} alt="" />
+      <div
+        className={`${defaultClass}__container-imagen ${defaultClass}__container-imagen--${theme}`}
+      >
+        <img
+          className={`${defaultClass}__container-imagen__img  ${defaultClass}__container-imagen__img--${theme}`}
+          src={List}
+          alt=""
+        />
       </div>
     </div>
   );

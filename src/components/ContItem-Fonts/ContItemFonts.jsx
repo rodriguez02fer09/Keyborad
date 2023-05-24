@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import "./contItemFonts.scss";
-import { ThemeContext } from "../../context/index";
-import { FontContext } from "../../context/index";
+import { ThemeContext, FontContext } from "../../context/index";
 
-const ContItemFonts = ({ fonts, handlerClick,currentFont  }) => {
-
+const ContItemFonts = ({ fonts, handlerClick }) => {
   const { theme } = useContext(ThemeContext);
+  const {getFontStyle} = useContext(FontContext)
   const defaultClass = "contItemFonts";
 
   return (
@@ -18,13 +17,13 @@ const ContItemFonts = ({ fonts, handlerClick,currentFont  }) => {
             <div key={index}>
               <p
                 className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme} 
-                ${font === currentFont ? "selected" : ""} 
+                ${font === getFontStyle ? "selected" : ""} 
                 `}
                 key={index}
                 onClick={() => {
                   handlerClick(font);
                 }}
-                style={{ fontFamily: currentFont }}
+                style={{ fontFamily: getFontStyle }}
               >
                 {font}
               </p>
