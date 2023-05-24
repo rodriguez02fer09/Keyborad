@@ -4,7 +4,7 @@ import { ThemeContext, FontContext } from "../../context/index";
 
 const ContItemFonts = ({ fonts, handlerClick }) => {
   const { theme } = useContext(ThemeContext);
-  const {getFontStyle} = useContext(FontContext)
+  const { fontStyle } = useContext(FontContext)
   const defaultClass = "contItemFonts";
 
   return (
@@ -16,13 +16,12 @@ const ContItemFonts = ({ fonts, handlerClick }) => {
           return (
             <div key={index}>
               <p
-                className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme} 
-                ${font === getFontStyle() ? "selected" : ""}`}
+                className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme}`}
                 key={index}
                 onClick={() => {
                   handlerClick(font);
                 }}
-                style={{ fontFamily: getFontStyle() }}
+                style={{ fontFamily: fontStyle }}
               >
                 {font}
               </p>

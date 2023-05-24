@@ -29,17 +29,13 @@ export const FontContext = createContext();
 export const FontProvider = ({ children }) => {
   const [fontStyle, setFontStyle] = useState("Sans Serif");
 
-  const handleFontStyleChange = (event) => {
-    debugger
-    setFontStyle(() => event.target.value);
+  const handleFontStyleChange = (font) => {
+    setFontStyle(() => font);
   };
 
-   const getFontStyle = () => {
-      return fontStyle
-   }
   return (
     <FontContext.Provider
-      value={{ getFontStyle, handleFontStyleChange  }}
+      value={{ fontStyle, handleFontStyleChange  }}
     >
       {children}
     </FontContext.Provider>
