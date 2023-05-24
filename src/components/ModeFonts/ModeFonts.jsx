@@ -9,8 +9,8 @@ const fonts = [{ font: "Sans Serif" }, { font: "Serif" }, { font: "Mono" }];
 
 const ModeFonts = () => {
   const [open, setOpen] = useState(false);
-  const [currentFont, setCurrentFont] = useState('SansSerif');
-  
+  const [currentFont, setCurrentFont] = useState('');
+
 
   const toggleDropDown = () => {
     setOpen((state) => !state);

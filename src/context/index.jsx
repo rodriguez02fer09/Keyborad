@@ -3,8 +3,7 @@ import React, { createContext, useState } from "react";
 //contexto del modo dark - theme
 export const ThemeContext = createContext();
 
-//contexto del style font
-export const FontContext = createContext();
+
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
@@ -23,6 +22,9 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+//contexto del style font
+export const FontContext = createContext();
 
 export const FontProvider = ({ children }) => {
   const [fontStyle, setFontStyle] = useState("Sans Serif");

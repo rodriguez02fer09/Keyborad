@@ -17,13 +17,12 @@ const ContItemFonts = ({ fonts, handlerClick }) => {
             <div key={index}>
               <p
                 className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme} 
-                ${font === getFontStyle ? "selected" : ""} 
-                `}
+                ${font === getFontStyle() ? "selected" : ""}`}
                 key={index}
                 onClick={() => {
                   handlerClick(font);
                 }}
-                style={{ fontFamily: getFontStyle }}
+                style={{ fontFamily: getFontStyle() }}
               >
                 {font}
               </p>

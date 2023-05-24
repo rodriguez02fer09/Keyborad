@@ -5,7 +5,7 @@ import { ThemeContext, FontContext } from "../../context/index";
 
 const ItemFont = ({ handlerOnClick}) => {
 
-const { getFontStyle, handleFontStyleChange } = useContext(FontContext);
+const { fontStyle, handleFontStyleChange } = useContext(FontContext);
   const { theme } = useContext(ThemeContext);
 
   const defaultClass = "main-itemFont";
@@ -21,12 +21,9 @@ const { getFontStyle, handleFontStyleChange } = useContext(FontContext);
           className={`${defaultClass}__container-input__input  ${defaultClass}__container-input__input--${theme}`}
           type="text"
           placeholder="Serif"
-          value={getFontStyle()}
-          onChange={(event) => {
-            debugger
-            handleFontStyleChange(event);
-          }}
-          style={{ fontFamily: getFontStyle()}}
+          value={fontStyle}
+          onChange={(event) => handleFontStyleChange(event)}
+          style={{ fontFamily: fontStyle }}
         />
       </div>
       <div
