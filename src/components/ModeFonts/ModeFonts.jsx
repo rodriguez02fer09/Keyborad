@@ -18,12 +18,12 @@ const ModeFonts = () => {
   };
 
   const selectFont = (f) => {
-    debugger;
+
     setOpen(!open);
     setCurrentFont(() => f);
     handleFontStyleChange(f);
   };
-  debugger;
+
   return (
       <div className="main-modeFonts">
         <ItemFont handlerOnClick={toggleDropDown} value={currentFont} />

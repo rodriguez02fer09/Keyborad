@@ -5,7 +5,9 @@ import ContainMeaning from "../ContainMeaning/ContainMeaning"
 
 
 
+
 const ContainMeaningVerb = ({isDark,text }) => {
+
     const defaultClass = `main-containMeaningVerb`;
     const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
 return(

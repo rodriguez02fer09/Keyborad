@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import "./searchPrompt.scss";
 import Shape from "../../assets/shape.svg";
-import { ThemeContext } from "../../context/index";
+import { ThemeContext, FontContext } from "../../context/index";
 
 const SearchPrompt = () => {
   const { theme } = useContext(ThemeContext);
+  const { fontStyle } = useContext(FontContext)
+
   const defaultClass = "search-prompt";
+
   return (
     <div className={`${defaultClass} ${defaultClass}--${theme}`}>
       <div
@@ -15,6 +18,7 @@ const SearchPrompt = () => {
           className={`${defaultClass}__container-input__input ${defaultClass}__container-input__input--${theme}`}
           type="text"
           placeholder="Keyboard"
+          style={{ fontFamily: fontStyle }}
         />
       </div>
       <div

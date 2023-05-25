@@ -7,6 +7,7 @@ const ItemFont = ({ value, handlerOnClick }) => {
   const { theme } = useContext(ThemeContext);
 
   const defaultClass = "main-itemFont";
+
   return (
     <div
       className={`${defaultClass} ${defaultClass}--${theme}`}
@@ -16,7 +17,7 @@ const ItemFont = ({ value, handlerOnClick }) => {
         className={`${defaultClass}__container-input ${defaultClass}__container-input--${theme}`}
       >
         <input
-          className={`${defaultClass}__container-input__input  ${defaultClass}__container-input__input--${theme}`}
+          className={`${defaultClass}__container-input__input  ${defaultClass}__container-input__input--${theme} `}
           type="text"
           placeholder="Serif"
           value={value}

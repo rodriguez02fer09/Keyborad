@@ -1,11 +1,16 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./descriptionMeaning.scss";
+import {FontContext} from "../../context/index"
+
 
 const DescriptionMeaning = ({ isDark }) => {
   const defaultClass = `main-descriptionMeaning`;
   const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
+  const { fontStyle } = useContext(FontContext)
+
   return (
-    <div className={`${defaultClass} ${custonClass}`}>
+    <div className={`${defaultClass} ${custonClass}`}
+    style={{ fontFamily: fontStyle }}>
       <ul>
         <li>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo sint
