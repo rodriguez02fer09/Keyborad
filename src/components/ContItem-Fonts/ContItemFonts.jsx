@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import "./contItemFonts.scss";
-import { ThemeContext, FontContext } from "../../context/index";
+import { AppContext } from "../../context/index";
 
 const ContItemFonts = ({ fonts, handlerClick }) => {
-  const { theme } = useContext(ThemeContext);
-  const { fontStyle } = useContext(FontContext)
+  const { theme,fontStyle  } = useContext(AppContext);
+
   const defaultClass = "contItemFonts";
 
   return (

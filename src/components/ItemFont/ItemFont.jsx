@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import "./itemFont.scss";
 import List from "../../assets/list-mode-fonts.svg";
-import { ThemeContext } from "../../context/index";
+import { AppContext } from "../../context/index";;
 
 const ItemFont = ({ value, handlerOnClick }) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(AppContext);
 
   const defaultClass = "main-itemFont";
 

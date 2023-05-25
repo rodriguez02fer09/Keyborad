@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import "./searchPrompt.scss";
 import Shape from "../../assets/shape.svg";
-import { ThemeContext, FontContext } from "../../context/index";
+import { AppContext} from "../../context/index";
 
 const SearchPrompt = () => {
-  const { theme } = useContext(ThemeContext);
-  const { fontStyle } = useContext(FontContext)
+  const { theme, fontStyle } = useContext(AppContext);
+
 
   const defaultClass = "search-prompt";
 

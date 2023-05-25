@@ -1,9 +1,9 @@
 import React,{useContext} from "react";
 import "./titleMeaning.scss"
-import {FontContext} from "../../context/index"
+import {AppContext} from "../../context/index"
 
 const TitleMeaning = ()=>{
-    const { fontStyle } = useContext(FontContext)
+    const { fontStyle } = useContext(AppContext)
 
     return(
         <div className="titleMeaning" >

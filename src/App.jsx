@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.scss";
 import Layout from "./components/Layout/Layout";
-import { ThemeProvider, FontProvider } from "./context";
+import { ContextProvider } from "./context";
 
 const App =() => {
   return (
-    <ThemeProvider>
-      <FontProvider>
+    
+      <ContextProvider>
         <Layout />
-      </FontProvider>
-    </ThemeProvider>
+      </ContextProvider>
+    
   );
 }
 export default App;

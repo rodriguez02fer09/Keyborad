@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import "./layout.scss";
 import ContainKeyboard from "../ContainKeyborad/ContainKeyboard";
-import {ThemeContext, FontContext} from "../../context/index";
+import { AppContext } from "../../context/index";
 
 
 const Layout = () => {
-  const { theme } = useContext(ThemeContext)
-  const { fontStyle } = useContext(FontContext)
+  const { theme  } = useContext(AppContext)
+  
   return (
     <div className={`layout layout--${theme}`}>
       <ContainKeyboard />

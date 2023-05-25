@@ -1,10 +1,10 @@
 import React,{useContext} from "react";
 import "./synonyms.scss";
-import {FontContext} from "../../context/index"
+import {AppContext} from "../../context/index"
 
 
 const Synonyms = ({isDark}) => {
-  const { fontStyle } = useContext(FontContext)
+  const { fontStyle } = useContext(AppContext)
   const defaultClass = `main-synonyms`;
   const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
   return (

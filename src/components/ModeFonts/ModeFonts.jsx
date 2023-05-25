@@ -2,14 +2,14 @@ import React, { useState, useContext } from "react";
 import "./modeFonts.scss";
 import ContItemFonts from "../ContItem-Fonts/ContItemFonts";
 import ItemFont from "../ItemFont/ItemFont";
-import { FontContext } from "../../context/index";
+import { AppContext } from "../../context/index";
 
 
 const fonts = [{ label: "Sans Serif", font:"Open Sans " }, { label: "Serif", font:"PT Serif"}, {label: "Mono" ,font: "Roboto Mono" }];
 
 const ModeFonts = () => {
   const [open, setOpen] = useState(false);
-  const {fontStyle, handleFontStyleChange} = useContext(FontContext);
+  const {fontStyle, handleFontStyleChange} = useContext(AppContext);
   const [currentFont, setCurrentFont] = useState(fontStyle);
   
 

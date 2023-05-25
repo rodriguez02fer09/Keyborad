@@ -1,10 +1,10 @@
 import React,{useContext} from "react";
 import "./mainSource.scss";
-import { ThemeContext,FontContext } from "../../context/index";
+import { AppContext } from "../../context/index";
 
 const MainSource = () => {
-  const { theme } = useContext(ThemeContext)
-  const { fontStyle } = useContext(FontContext)
+  const { theme , fontStyle } = useContext(AppContext)
+ 
   return (
     <div className={`main-source main-source--${theme}`}>
       <div className="source">

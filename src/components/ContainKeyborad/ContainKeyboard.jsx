@@ -9,15 +9,11 @@ import Synonyms from "../Synonyms/Synonyms"
 import ContainMeaningVerb from "../ContainMeaningVerb/ContainMeaningVerb"
 import LineLong from "../../assets/line-long.svg"
 import MainSource from "../MainSource/MainSource"
-import {ThemeContext} from "../../context/index"
+import { AppContext } from "../../context/index"
 
 const ContainKeyboard = () => {
-  const { theme } = useContext(ThemeContext)
-  
+  const { theme } = useContext(AppContext)
 
-
-
-  
   return(
     <div className={`containKeyboard containKeyboard--${theme}`}>
       <ContainMode/>

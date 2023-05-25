@@ -1,12 +1,12 @@
 import React ,{useContext}from "react";
 import "./title.scss";
-import { ThemeContext, FontContext } from "../../context/index";
+import {AppContext } from "../../context/index";
 
 
 const Title = () => {
-  const { fontStyle } = useContext(FontContext)
+  const { fontStyle, theme } = useContext(AppContext)
 
-  const { theme } = useContext(ThemeContext)
+ 
   return (
     <div className={`title title--${theme}`}
     

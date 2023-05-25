@@ -1,12 +1,12 @@
 import React ,{useContext}from "react";
 import "./section.scss";
 import LineSection from "../../assets/line-section.svg";
-import { ThemeContext,FontContext } from "../../context/index";
+import { AppContext } from "../../context/index";
 
 const Section = ({text}) => {
   const defaultClass = "main-section";
-  const { theme } = useContext(ThemeContext)
-  const { fontStyle } = useContext(FontContext)
+  const { theme ,  fontStyle } = useContext(AppContext)
+
 
   return (
     <div className={`${defaultClass} ${defaultClass}--${theme}`}>
