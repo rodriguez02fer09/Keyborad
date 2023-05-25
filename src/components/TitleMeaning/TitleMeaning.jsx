@@ -6,8 +6,8 @@ const TitleMeaning = ()=>{
     const { fontStyle } = useContext(FontContext)
 
     return(
-        <div className="titleMeaning" style={{ fontFamily: fontStyle }}>
-            <p>Meaning</p>
+        <div className="titleMeaning" >
+            <p style={{ fontFamily: fontStyle }}>Meaning</p>
         </div>
     )
 }

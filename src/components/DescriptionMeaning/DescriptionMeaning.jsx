@@ -10,9 +10,9 @@ const DescriptionMeaning = ({ isDark }) => {
 
   return (
     <div className={`${defaultClass} ${custonClass}`}
-    style={{ fontFamily: fontStyle }}>
+   >
       <ul>
-        <li>
+        <li  style={{ fontFamily: fontStyle }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo sint
           corporis temporibus, cupiditate, consectetur tenetur eaque aliquid
           itaque eum autem vitae laboriosam laudantium magnam. Amet accusantium

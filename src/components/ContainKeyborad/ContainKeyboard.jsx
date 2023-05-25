@@ -14,12 +14,16 @@ import {ThemeContext} from "../../context/index"
 const ContainKeyboard = () => {
   const { theme } = useContext(ThemeContext)
   
+
+
+
+  
   return(
     <div className={`containKeyboard containKeyboard--${theme}`}>
       <ContainMode/>
       <SearchPrompt/>
       <ContainTitleButton/>
-      <Section />
+      <Section text="noun"/>
       <ContainMeaning/>
       <Synonyms/>
       <ContainMeaningVerb text="verb"/>

@@ -5,7 +5,7 @@ import ItemFont from "../ItemFont/ItemFont";
 import { FontContext } from "../../context/index";
 
 
-const fonts = [{ font: "Sans Serif" }, { font: "Serif" }, { font: "Mono" }];
+const fonts = [{ label: "Sans Serif", font:"Open Sans " }, { label: "Serif", font:"PT Serif"}, {label: "Mono" ,font: "Roboto Mono" }];
 
 const ModeFonts = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,6 @@ const ModeFonts = () => {
   };
 
   const selectFont = (f) => {
-
     setOpen(!open);
     setCurrentFont(() => f);
     handleFontStyleChange(f);

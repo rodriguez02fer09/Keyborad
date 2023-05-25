@@ -9,14 +9,14 @@ const Title = () => {
   const { theme } = useContext(ThemeContext)
   return (
     <div className={`title title--${theme}`}
-    style={{ fontFamily: fontStyle }}
+    
  
     >
-      <div className="container"    style={{ fontFamily: fontStyle }}>
-        <h1>Keyboard</h1>
+      <div className="container"    >
+        <h1 style={{ fontFamily: fontStyle }}>Keyboard</h1>
       </div>
-      <div className="idioma"  style={{ fontFamily: fontStyle }}  >
-        <p>/ˈkiːbɔːd/</p>
+      <div className="idioma"   >
+        <p  style={{ fontFamily: fontStyle }}>/ˈkiːbɔːd/</p>
       </div>
     </div>
   );
