@@ -19,8 +19,8 @@ const ModeFonts = () => {
 
   const selectFont = (f) => {
     setOpen(!open);
-    setCurrentFont(() => f);
-    handleFontStyleChange(f);
+    setCurrentFont(() => f.label);
+    handleFontStyleChange(f.font);
   };
 
   return (

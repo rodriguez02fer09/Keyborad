@@ -12,14 +12,15 @@ const ContItemFonts = ({ fonts, handlerClick }) => {
       <div
         className={`${defaultClass}__container-listFont ${defaultClass}__container-listFont--${theme} `}
       >
-        {fonts.map(({ font, label }, index) => {
+        {fonts.map((f, index) => {
+          const { font, label } = f;
           return (
             <div key={index}>
               <p style={{ fontFamily: fontStyle }}
                 className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme}`}
                 key={index}
                 onClick={() => {
-                  handlerClick(font);
+                  handlerClick(f);
                 }}
               
               >
