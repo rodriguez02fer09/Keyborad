@@ -59,7 +59,6 @@ export const ContextProvider = ({ children }) => {
   };
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
     setContext((state) => {
       return {
         ...state,
