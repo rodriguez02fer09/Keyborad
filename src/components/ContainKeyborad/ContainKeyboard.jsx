@@ -1,28 +1,23 @@
 import React,{useContext} from "react";
 import "./containKeyboard.scss"
-import ContainMode from "../ContainMode/ContainMode"
-import SearchPrompt  from "../SearchPrompt/SearchPrompt"
-import ContainTitleButton from "../ContainTitleButton/ContainTitleButton"
-import Section from "../Section/Section";
-import ContainMeaning from "../ContainMeaning/ContainMeaning"
-import Synonyms from "../Synonyms/Synonyms"
-import ContainMeaningVerb from "../ContainMeaningVerb/ContainMeaningVerb"
-import LineLong from "../../assets/line-long.svg"
-import MainSource from "../MainSource/MainSource"
 import { AppContext } from "../../context/index"
+import SearchPrompt  from "../SearchPrompt"
+import MainTitle from '../MainTitle';
+import Menu from "../Menu";
+import LineLong from "../../assets/line-long.svg"
+import MainInformation from '../MainInformation';
+import MainSource from "../MainSource"
+
 
 const ContainKeyboard = () => {
   const { theme } = useContext(AppContext)
 
   return(
     <div className={`containKeyboard containKeyboard--${theme}`}>
-      <ContainMode/>
+      <Menu/>
       <SearchPrompt/>
-      <ContainTitleButton/>
-      <Section text="noun"/>
-      <ContainMeaning/>
-      <Synonyms/>
-      <ContainMeaningVerb text="verb"/>
+      <MainTitle/>
+      <MainInformation/>
     <div className="containKeyboard-img">
       <img src={LineLong} alt="" />
     </div>
