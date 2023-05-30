@@ -3,7 +3,7 @@ import "../style/searchPrompt.scss";
 import Shape from "../../../assets/shape.svg";
 import { AppContext} from "../../../context/index";
 
-const SearchPrompt = () => {
+const SearchPrompt = ({handleInputChange}) => {
   const { theme, fontStyle } = useContext(AppContext);
 
 
@@ -19,6 +19,7 @@ const SearchPrompt = () => {
           type="text"
           placeholder="Keyboard"
           style={{ fontFamily: fontStyle }}
+          onChange={handleInputChange}
         />
       </div>
       <div
