@@ -3,10 +3,10 @@ import "../index.scss";
 import Button  from "../Button";
 import Title from "../Title";
 
-const MainTitle = () => {
+const MainTitle = ({title, phonetic}) => {
   return (
     <div className="ContainTitleButton">
-      <Title />
+      <Title title={title} phonetic={phonetic} />
       <Button />
     </div>
   );
