@@ -15,6 +15,8 @@ const buildPhonetics = (phonetics) => {
   };
 };
 
+
+
 const formatWord = (meaningWord) => {
   if (meaningWord?.word) {
     const { word = "", phonetics, meanings, sourceUrls } = meaningWord;
@@ -25,9 +27,9 @@ const formatWord = (meaningWord) => {
       source: sourceUrls,
     };
   }
-
   return {};
 };
+
 
 const getWordDefinition = async (word) => {
   try {
@@ -45,7 +47,7 @@ const reducer = (state, action) => {
   if (action.type === "update_word") {
     return {
       ...state,
-      word: action.newWord,
+      word: action.newWord,//newWord -payload
     };
   }
 };
@@ -83,7 +85,7 @@ const ContainKeyboard = () => {
       <div className="containKeyboard-img">
         <img src={LineLong} alt="" />
       </div>
-      <MainSource />
+      <MainSource source={word && word.source}  />
     </div>
   );
 };

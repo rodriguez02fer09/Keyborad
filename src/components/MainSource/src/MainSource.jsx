@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import "../index.scss";
 import { AppContext } from "../../../context/index";
 
-const MainSource = () => {
+const MainSource = ({source}) => {
   const { theme , fontStyle } = useContext(AppContext)
  
   return (
@@ -11,7 +11,7 @@ const MainSource = () => {
         <p style={{ fontFamily: fontStyle }}>Source</p>
       </div>
       <div className="link">
-        <a style={{ fontFamily: fontStyle }} href="">https://en.wiktionary.org/wiki/keyboard</a>
+        <a style={{ fontFamily: fontStyle }} href="">{source}</a>
       </div>
     </div>
   );

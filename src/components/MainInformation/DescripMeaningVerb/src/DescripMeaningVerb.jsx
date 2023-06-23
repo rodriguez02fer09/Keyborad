@@ -3,7 +3,7 @@ import "../index.scss";
 import DescriptionMeaning from "../../DescriptionMeaning";
 import TitleMeaning from "../../TitleMeaning";
 
-const ContainMeaningVerb = ({ isDark, text }) => {
+const ContainMeaningVerb = ({ isDark}) => {
   const defaultClass = `main-containMeaningVerb`;
   const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
   return (
