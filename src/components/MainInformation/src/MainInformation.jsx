@@ -1,28 +1,33 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import Section from "../Section";
 import TitleMeaning from "../TitleMeaning";
 import DescriptionMeaning from "../DescriptionMeaning";
-import {AppContext} from "../../../context/index"
+import { AppContext } from "../../../context/index";
 import Synonyms from "../Synonyms";
-import DescripMeaningVerb from "../DescripMeaningVerb"
-import '../index.scss';
+import DescripMeaningVerb from "../DescripMeaningVerb";
+import "../index.scss";
 
-const MainInformation = ({ isDark }) => {
+const MainInformation = ({ isDark,index, meanings=[] }) => {
   const defaultClass = `main-containMeaning`;
-  const { fontStyle } = useContext(AppContext)
+  const { fontStyle } = useContext(AppContext);
 
   const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
   return (
-    <div
+    <div key ={index}
       className={`${defaultClass} ${custonClass}`}
       style={{ fontFamily: fontStyle }}
     >
-      <Section text="noun"/>
-      <TitleMeaning />
-      <DescriptionMeaning />
-      <Synonyms/>
-      <Section text="verb"/>
-      <DescripMeaningVerb/>
+       {meanings.map(({partOfSpeech,definitions, synonyms}) => {
+        return (
+      <>
+            <Section text={partOfSpeech}/>
+            <TitleMeaning />
+            <DescriptionMeaning definitions={definitions}  />
+            <Synonyms values={synonyms} />
+           
+          </>
+        );
+      })}
     </div>
   );
 };

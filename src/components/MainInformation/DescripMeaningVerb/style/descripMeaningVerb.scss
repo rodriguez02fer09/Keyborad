@@ -4,5 +4,31 @@ height:auto;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+ul {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    list-style-position: inside;
+    padding: 10px;
+    text-align: left; /* alinear el texto a la izquierda */
+    list-style: none;
+  }
+li{
+  font-family: 'Inter';
+font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+
+}
+  li:before {
+    
+    content: "•"; /* agregar el punto personalizado */
+    color: var(--seven-color); /* darle color rojo al punto */
+    margin-right: 5px; /* agregar un espacio entre el punto y el texto */
+    font-size: 20px;
+  }
 
 }

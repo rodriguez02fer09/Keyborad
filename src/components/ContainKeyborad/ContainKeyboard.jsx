@@ -10,11 +10,10 @@ import MainSource from "../MainSource";
 
 const buildPhonetics = (phonetics) => {
   return {
-    text: (phonetics && phonetics[0] && phonetics[0].text) || "",
+    text: phonetics.find((phonetic) => phonetic.text !== "")?.text || "",
     audio: phonetics.find((phonetic) => phonetic.audio !== "")?.audio || "",
   };
 };
-
 
 
 const formatWord = (meaningWord) => {
@@ -81,13 +80,28 @@ const ContainKeyboard = () => {
       <Menu />
       <SearchPrompt handleInputChange={handleInputChange} />
       <MainTitle title={word && word.word} phonetic={word?.phonetic} />
-      <MainInformation />
+      <MainInformation  meanings={word && word.meanings}/>
       <div className="containKeyboard-img">
         <img src={LineLong} alt="" />
       </div>
-      <MainSource source={word && word.source}  />
+      <MainSource source={word && word.source} />
     </div>
   );
 };
 
 export default ContainKeyboard;
+
+
+// const obj = {
+//   nombre: "ggg"
+// }
+// const {nombre}= obj
+// const atributo = "nombre"
+// const val = obj[`${nombre}`];
+
+
+//que es un mapeo pasar de un formato a otro formatoa otro objeto
+
+// if (meaningWord?.word) el signo pregunta valida si un objeto exuste
+
+// meaningWord && meaningWord.word esto es igual meaningWord?.word
