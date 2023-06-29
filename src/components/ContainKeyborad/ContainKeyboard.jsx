@@ -85,8 +85,9 @@ const ContainKeyboard = () => {
           console.error(error);
         });
     } else {
-   setEmpty(true)
+      setEmpty(true)
       setNotFound(false)
+      setWord(() => {});
 
     }
   };
