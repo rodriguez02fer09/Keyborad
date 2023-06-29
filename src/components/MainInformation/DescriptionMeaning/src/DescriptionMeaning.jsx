@@ -6,11 +6,11 @@ const DescriptionMeaning = ({ isDark, definitions }) => {
   const defaultClass = `main-descriptionMeaning`;
   const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
   const { fontStyle } = useContext(AppContext);
-
+ debugger
   return (
     <div className={`${defaultClass} ${custonClass}`}>
       <ul>
-        {definitions.map(({definition,example}, index) => (
+        {definitions && definitions.length > 0 && definitions.map(({definition,example}, index) => (
           <>
             <li key={index} style={{ fontFamily: fontStyle }}>
               {definition}

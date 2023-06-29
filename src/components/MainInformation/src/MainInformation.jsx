@@ -17,17 +17,14 @@ const MainInformation = ({ isDark,index, meanings=[] }) => {
       className={`${defaultClass} ${custonClass}`}
       style={{ fontFamily: fontStyle }}
     >
-       {meanings.map(({partOfSpeech,definitions, synonyms}) => {
-        return (
-      <>
-            <Section text={partOfSpeech}/>
-            <TitleMeaning />
-            <DescriptionMeaning definitions={definitions}  />
-            <Synonyms values={synonyms} />
-           
-          </>
-        );
-      })}
+  {meanings.map(({ partOfSpeech, definitions, synonyms }, index) => (
+  <React.Fragment key={index}>
+    <Section text={partOfSpeech} />
+    <TitleMeaning />
+    <DescriptionMeaning definitions={definitions} />
+    <Synonyms values={synonyms} />
+  </React.Fragment>
+))}
     </div>
   );
 };

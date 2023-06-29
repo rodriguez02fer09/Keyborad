@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import "../style/searchPrompt.scss";
 import Shape from "../../../assets/shape.svg";
-import { AppContext} from "../../../context/index";
+import { AppContext } from "../../../context/index";
 
-const SearchPrompt = ({handleInputChange}) => {
+const SearchPrompt = ({ handleInputChange, findWord, empty, notFound }) => {
   const { theme, fontStyle } = useContext(AppContext);
-
 
   const defaultClass = "search-prompt";
 
@@ -20,12 +19,34 @@ const SearchPrompt = ({handleInputChange}) => {
           placeholder="Keyboard"
           style={{ fontFamily: fontStyle }}
           onChange={handleInputChange}
+          //Whoops, can’t be empty…
         />
+        {empty && (
+          <div className={`${defaultClass}__container-input__input--error `}>
+            <p>Whoops, can’t be empty…</p>
+          </div>
+        )}
+        {notFound && (
+          <div className={`${defaultClass}__container-input__input--noFound`}>
+            😕
+            <p>No Definitions Found</p>
+            <p>
+              Sorry pal, we couldn't find definitions for the word you were
+              looking for. You can try the search again at later time or head to
+              the web instead.
+            </p>
+          </div>
+        )}
       </div>
       <div
         className={`${defaultClass}__container-img ${defaultClass}__container-img--${theme}`}
       >
-        <img className={`${defaultClass}__container-img__img ${defaultClass}__container-img__img--${theme}`} src={Shape} alt="shape" />
+        <img
+          onClick={findWord}
+          className={`${defaultClass}__container-img__img ${defaultClass}__container-img__img--${theme}`}
+          src={Shape}
+          alt="shape"
+        />
       </div>
     </div>
   );
