@@ -11,12 +11,10 @@ const DescriptionMeaning = ({ isDark, definitions }) => {
     <div className={`${defaultClass} ${custonClass}`}>
       <ul>
         {definitions && definitions.length > 0 && definitions.map(({definition,example}, index) => (
-          <>
-            <li key={index} style={{ fontFamily: fontStyle }}>
-              {definition}
-            </li>
+            <React.Fragment key={index}>
+            <li style={{ fontFamily: fontStyle }}>{definition}</li>
             <p>{example}</p>
-          </>
+          </React.Fragment>
         ))}
       </ul>
     </div>

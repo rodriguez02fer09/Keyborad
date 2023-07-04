@@ -14,20 +14,21 @@ const SearchPrompt = ({ handleInputChange, findWord, empty, notFound }) => {
         className={`${defaultClass}__container-input ${defaultClass}__container-input--${theme}`}
       >
         <input
-          className={`${defaultClass}__container-input__input ${defaultClass}__container-input__input--${theme}`}
-          type="text"
+           className={`${defaultClass}__container-input__input ${defaultClass}__container-input__input--${theme} ${empty ? `${defaultClass}__container-input__input--red` : ""}`}
+  
+         type="text"
           placeholder="Keyboard"
           style={{ fontFamily: fontStyle }}
           onChange={handleInputChange}
           //Whoops, can’t be empty…
         />
         {empty && (
-          <div className={`${defaultClass}__container-input__input--error `}>
+          <div className={`${defaultClass}__container-input__input--error`}>
             <p>Whoops, can’t be empty…</p>
           </div>
         )}
         {notFound && (
-          <div className={`${defaultClass}__container-input__input--noFound`}>
+          <div className={`${defaultClass}__container-input__input--notFound`}>
             😕
             <p>No Definitions Found</p>
             <p>
