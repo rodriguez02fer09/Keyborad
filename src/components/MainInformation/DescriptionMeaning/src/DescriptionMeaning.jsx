@@ -6,7 +6,7 @@ const DescriptionMeaning = ({ isDark, definitions }) => {
   const defaultClass = `main-descriptionMeaning`;
   const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`;
   const { fontStyle } = useContext(AppContext);
- debugger
+
   return (
     <div className={`${defaultClass} ${custonClass}`}>
       <ul>
