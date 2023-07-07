@@ -1,23 +1,25 @@
 .title {
-  width: 149px;
+  width: 150px;
   height: 68px;
   display: flex;
   flex-direction: column;
   justify-content: end;
 
-  &__container {
+  & .container { /* Utiliza un espacio aquí en lugar de "__" */
     width: 147px;
     height: 39px;
+  
 
     h1 {
-      font-family: "Open Sans";
+      font-size: 32px;
+      font-family: Inconsolata;
       font-style: normal;
       font-weight: 700;
-      font-size: 32px;
-      line-height: 34px;
+      line-height: normal;
       /* identical to box height */
       /* 2D2D2D */
     }
+
   }
   .idioma {
     width: auto;
@@ -34,6 +36,44 @@
       /* A445ED */
 
       color: #a445ed;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    width: 256px;
+    height: 107px;
+    display:flex ;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    & .container {
+      h1 {
+        font-size: 64px;
+        font-family: Inconsolata;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        /* identical to box height */
+        /* 2D2D2D */
+      }
+    }
+  }
+  .idioma {
+    width: auto;
+    height: 24px;
+
+
+    p {
+      font-size: 24px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      color: #a445ed;
+      text-align: start;
     }
   }
 }

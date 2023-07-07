@@ -1,9 +1,16 @@
-.ContainTitleButton{
-    width: 327px;
-    height: 68px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
+.ContainTitleButton {
+  width: 327px;
+  height: 68px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+@media (max-width: 768px) {
+  .ContainTitleButton {
+    width: 689px;
+    height: 107px;
+   
+  }
 }

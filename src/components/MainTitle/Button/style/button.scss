@@ -1,9 +1,21 @@
-.Button{
+.Button {
+  width: 48px;
+  height: 48px;
+
+  img {
     width: 48px;
     height: 48px;
+  }
+}
+@media (max-width: 768px) {
+  .Button {
+    width: 75px;
+    height: 75px;
 
-    img{
-        width: 48px;
-        height: 48px;
+    img {
+      width: 75px;
+      height: 75px;
+      flex-shrink: 0;
     }
+  }
 }

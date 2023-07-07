@@ -1,4 +1,4 @@
-input:focus-visible{
+input:focus-visible {
   outline: none;
 }
 
@@ -18,12 +18,10 @@ input:focus-visible{
       background: #f4f4f4;
       border-radius: 16px;
       padding-left: 24px;
-     border-color: transparent;
-     
+      border-color: transparent;
+
       &--red {
         border-color: red !important;
-     
-        
       }
 
       &--error {
@@ -32,9 +30,7 @@ input:focus-visible{
         color: red;
         display: flex;
         flex-direction: row;
-        padding-left:5px;
-
-
+        padding-left: 5px;
       }
       &::placeholder {
         font-family: "Open Sans";
@@ -47,22 +43,20 @@ input:focus-visible{
       }
 
       &--dark {
-        border-color:#a445ed ;
+        border-color: #a445ed;
         background: #1f1f1f;
-        color:white;
+        color: white;
         font-family: "Open Sans";
         font-style: normal;
-       
+
         font-size: 16px;
         line-height: 20px;
         &::placeholder {
           color: white;
         }
-      
       }
     }
   }
-
   &__container-img {
     width: 15px;
     height: 15px;
@@ -71,6 +65,34 @@ input:focus-visible{
       position: relative;
       left: 286px;
       bottom: 31px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .search-prompt {
+    width: 689px;
+    height: 64px;
+    margin-top: 25px;
+
+    &__container-input {
+      width: 689px;
+      height: 64px;
+
+      &__input {
+        width: 689px;
+        height: 64px;
+      }
+    }
+
+    &__container-img {
+      width: 15px;
+      height: 15px;
+
+      &__img {
+        position: relative;
+        left: 646px;
+        bottom: 39px;
+      }
     }
   }
 }

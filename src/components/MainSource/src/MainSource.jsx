@@ -4,13 +4,14 @@ import { AppContext } from "../../../context/index";
 
 const MainSource = ({source}) => {
   const { theme , fontStyle } = useContext(AppContext)
- 
+  const defaultClass = "main-source";
+
   return (
-    <div className={`main-source main-source--${theme}`}>
-      <div className="source">
+    <div className={`${defaultClass} ${defaultClass}--${theme}`}>
+      <div className={`${defaultClass}__source ${defaultClass}__source--${theme}`}>
         <p style={{ fontFamily: fontStyle }}>Source</p>
       </div>
-      <div className="link">
+      <div className={`${defaultClass}__link ${defaultClass}__link--${theme}`}>
         <a style={{ fontFamily: fontStyle }} href="">{source}</a>
       </div>
     </div>

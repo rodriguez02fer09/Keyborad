@@ -1,17 +1,16 @@
-.titleMeaning{
+.titleMeaning  {
     width: 65px;
     height: 20px;
     display: flex;
     flex-direction: columns;
-    p{
-        font-family: "Open Sans";
-font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        
-        /* 757575 */
-        
+
+
+  &__p{
+    font-size: 20px;
+    font-family: Inconsolata;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
         color:#757575;  
     }
 }

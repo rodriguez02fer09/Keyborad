@@ -21,7 +21,6 @@ font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-
 }
   li:before {
     
@@ -31,4 +30,14 @@ font-style: normal;
     font-size: 20px;
   }
 
+}
+
+@media (max-width: 768px) {
+
+  .main-containMeaningVerb{
+    width: 641px;
+    height:auto;
+   
+
+}
 }
