@@ -5,10 +5,10 @@
   flex-direction: column;
   justify-content: end;
 
-  & .container { /* Utiliza un espacio aquí en lugar de "__" */
+  &__container {
+    /* Utiliza un espacio aquí en lugar de "__" */
     width: 147px;
     height: 39px;
-  
 
     h1 {
       font-size: 32px;
@@ -19,9 +19,8 @@
       /* identical to box height */
       /* 2D2D2D */
     }
-
   }
-  .idioma {
+  &__idioma {
     width: auto;
     height: 24px;
 
@@ -40,16 +39,15 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .title {
     width: 256px;
     height: 107px;
-    display:flex ;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-
-    & .container {
+    &__container {
       h1 {
         font-size: 64px;
         font-family: Inconsolata;
@@ -60,20 +58,45 @@
         /* 2D2D2D */
       }
     }
+    &__idioma {
+      width: 96px;
+      height: 29px;
+
+      p {
+        font-size: 24px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: #a445ed;
+        text-align: start;
+      }
+    }
   }
-  .idioma {
-    width: auto;
-    height: 24px;
+}
+@media (min-width: 1440px) {
+  .title {
+    &__container {
+      h1 {
+        font-size: 64px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+    &__idioma {
+      width: auto;
+      height: 24px;
 
-
-    p {
-      font-size: 24px;
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      color: #a445ed;
-      text-align: start;
+      p {
+        font-size: 24px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: start;
+      }
     }
   }
 }

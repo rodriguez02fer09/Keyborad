@@ -7,10 +7,19 @@
   align-items: center;
   margin-bottom: 32px;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .ContainTitleButton {
     width: 689px;
     height: 107px;
    
+  }
+}
+@media (min-width: 1440px){
+  .ContainTitleButton {
+    width: 737px;
+height: 114px;
+background: skyblue;
+
+
   }
 }

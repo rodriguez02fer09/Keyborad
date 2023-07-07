@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .main-section {
     width: 688px;
     height: 32px;
@@ -68,3 +68,31 @@
     }
   }
 }
+@media (min-width: 1440px){
+
+}.main-section {
+    width: 736px;
+    height: 32px;
+
+
+    &__container-p {
+      width: 48px;
+      height: 25px;
+      &__p {
+        font-size: 24px;
+        font-weight: 700;
+
+        /* identical to box height */
+        /* 2D2D2D */
+      }
+    }
+    &__line {
+      width: 608px;
+      height: 1px;
+      
+      img {
+        width: 608px;
+        height: 1px;
+      }
+    }
+  }

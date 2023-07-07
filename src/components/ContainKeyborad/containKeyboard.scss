@@ -21,7 +21,7 @@
     color: white;
   }
 }
-@media (max-width: 768px){
+@media (min-width: 768px){
   .containKeyboard {
     width: 768px;
     height: 1197px;
@@ -29,4 +29,14 @@
  
 
   }
+}
+@media (min-width: 1440px){
+  .containKeyboard {
+    width: 1440px;
+    height: 1205;
+  overflow-x: hidden;
+
+
+   }
+
 }

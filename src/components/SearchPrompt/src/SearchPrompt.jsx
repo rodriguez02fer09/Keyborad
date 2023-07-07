@@ -39,9 +39,7 @@ const SearchPrompt = ({ handleInputChange, findWord, empty, notFound }) => {
           </div>
         )}
       </div>
-      <div
-        className={`${defaultClass}__container-img ${defaultClass}__container-img--${theme}`}
-      >
+    
         <img
           onClick={findWord}
           className={`${defaultClass}__container-img__img ${defaultClass}__container-img__img--${theme}`}
@@ -49,7 +47,7 @@ const SearchPrompt = ({ handleInputChange, findWord, empty, notFound }) => {
           alt="shape"
         />
       </div>
-    </div>
+  
   );
 };
 export default SearchPrompt;
