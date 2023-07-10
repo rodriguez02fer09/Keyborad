@@ -4,7 +4,7 @@ import TitleMeaning from "../TitleMeaning";
 import DescriptionMeaning from "../DescriptionMeaning";
 import { AppContext } from "../../../context/index";
 import Synonyms from "../Synonyms";
-import DescripMeaningVerb from "../DescripMeaningVerb";
+
 import "../index.scss";
 
 const MainInformation = ({ isDark,index, meanings=[] }) => {

@@ -3,8 +3,8 @@
   height: 68px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-
+  justify-content: flex-start;
+  align-items: flex-start;
   &__container {
     /* Utiliza un espacio aquí en lugar de "__" */
     width: 147px;
@@ -23,6 +23,7 @@
   &__idioma {
     width: auto;
     height: 24px;
+    margin-left: 10px;
 
     p {
       font-family: "Inter";
@@ -47,6 +48,7 @@
     flex-direction: column;
     justify-content: space-between;
 
+
     &__container {
       h1 {
         font-size: 64px;
@@ -59,7 +61,7 @@
       }
     }
     &__idioma {
-      width: 96px;
+      width: 98px;
       height: 29px;
 
       p {
@@ -76,6 +78,8 @@
 }
 @media (min-width: 1440px) {
   .title {
+    width: 293px;
+    height: 107px;
     &__container {
       h1 {
         font-size: 64px;

@@ -1,15 +1,24 @@
 .containKeyboard {
   width: 370px;
   height: 910px;
-  background: powderblue;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--six-color);
+  //background: var(--six-color);
   overflow-x: hidden;
   .containKeyboard-img {
     width: 327px;
     height: 1px;
+
+     &__image--mobile {
+      display: block;
+    }
+    &__image--tablet {
+       display: none;
+    }
+    &__image--desktop {
+       display: none;
+    }
   }
 
   &--light {
@@ -21,22 +30,47 @@
     color: white;
   }
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .containKeyboard {
     width: 768px;
     height: 1197px;
-  overflow-x: hidden;
- 
+    overflow-x: hidden;
 
+    .containKeyboard-img {
+      width: 608px;
+      height: 1px;
+
+     
+    &__image--mobile {
+      display: none;
+      }
+      &__image--tablet {
+       display: block;
+       }
+       &__image--desktop {
+        display: none;
+      }
+    }
   }
 }
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
   .containKeyboard {
     width: 1440px;
     height: 1205;
-  overflow-x: hidden;
+    overflow-x: hidden;
+    .containKeyboard-img {
+      width: 736px;
+      height: 1px;
 
-
-   }
-
+      &__image--mobile {
+        display: none;
+      }
+      &__image--tablet {
+        display: none;
+      }
+      &__image--desktop {
+        display: block;
+      }
+    }
+  }
 }

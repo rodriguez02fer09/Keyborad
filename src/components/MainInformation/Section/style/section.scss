@@ -1,24 +1,23 @@
 .main-section {
-  width: 327px;
   height: 23px;
   margin-bottom: 31px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+
 
   &__container-p {
     width: 36px;
     height: 19px;
+    margin-right: 20px;
 
     &__p {
-      font-family: "Open Sans";
-      font-style: italic;
-      font-weight: 700;
+      font-family: Inconsolata;
+      color: var(--2-d-2-d-2-d, #2d2d2d);
       font-size: 18px;
-      line-height: 23px;
-      /* identical to box height */
-      /* 2D2D2D */
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
       &--dark {
         color: white;
       }
@@ -27,13 +26,15 @@
   &__line {
     width: 266px;
     height: 1px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
-    img {
+    &__image--mobile {
       width: 266px;
       height: 1px;
+    }
+    &__image--tablet {
+      display: none;
+    }
+    &__image--desktop {
+      display: none;
     }
   }
 }
@@ -44,10 +45,49 @@
     height: 32px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+  justify-content: center;
+
+
 
     &__container-p {
       width: 48px;
+      height: 25px;
+  
+
+      &__p {
+        font-size: 24px;
+        font-weight: 700;
+
+        /* identical to box height */
+        /* 2D2D2D */
+      }
+    }
+    &__line {
+      width: 608px;
+      height: 10px;
+      margin-top: 10px;
+
+      &__image--tablet {
+        display: block;
+        width: 608px;
+      }
+      &__image--mobile {
+        display: none;
+      }
+      &__image--desktop {
+        display: none;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .main-section {
+    width: 736px;
+    height: 32px;
+
+
+    &__container-p {
+      width: 50px;
       height: 25px;
       &__p {
         font-size: 24px;
@@ -60,7 +100,7 @@
     &__line {
       width: 608px;
       height: 1px;
-      
+
       img {
         width: 608px;
         height: 1px;
@@ -68,31 +108,3 @@
     }
   }
 }
-@media (min-width: 1440px){
-
-}.main-section {
-    width: 736px;
-    height: 32px;
-
-
-    &__container-p {
-      width: 48px;
-      height: 25px;
-      &__p {
-        font-size: 24px;
-        font-weight: 700;
-
-        /* identical to box height */
-        /* 2D2D2D */
-      }
-    }
-    &__line {
-      width: 608px;
-      height: 1px;
-      
-      img {
-        width: 608px;
-        height: 1px;
-      }
-    }
-  }

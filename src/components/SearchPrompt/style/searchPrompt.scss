@@ -19,7 +19,6 @@ input:focus-visible {
       border-radius: 16px;
       padding-left: 24px;
       border-color: transparent;
-
       &--red {
         border-color: red !important;
       }
@@ -57,13 +56,12 @@ input:focus-visible {
       }
     }
   }
-
-  &__container-img__img {
-    width: 15px;
-    height: 15px;
+  &__container-img {
+    width: 20px;
+    height: 20px;
     position: relative;
-    left: 286px;
-    bottom: 31px;
+    left: 289px;
+    bottom: 32px;
   }
 }
 @media (min-width: 768px) {
@@ -75,22 +73,30 @@ input:focus-visible {
     &__container-input {
       width: 689px;
       height: 64px;
-
       position: relative;
 
       &__input {
         width: 689px;
         height: 64px;
+
+        &::placeholder {
+          font-family: Inter;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          color: #2d2d2d;
+          opacity: 0.25;
+        }
       }
     }
 
     &__container-img__img {
-      
       width: 15px;
       height: 15px;
       position: relative;
-      left: 286px;
-      bottom: 31px;
+      left: 356px;
+      bottom: 8px;
     }
   }
 }
@@ -100,11 +106,12 @@ input:focus-visible {
     width: 736px;
     height: 64px;
     margin-top: 25px;
-    position: relative;
+
 
     &__container-input {
       width: 736px;
       height: 64px;
+      position: relative;
 
       &__input {
         width: 736px;
@@ -113,12 +120,11 @@ input:focus-visible {
     }
 
     &__container-img__img {
-  
       width: 15px;
       height: 15px;
       position: relative;
-      left: 334px;
-      bottom: 38px;
+      left: 402px;
+    bottom: 5px;
     }
   }
 }

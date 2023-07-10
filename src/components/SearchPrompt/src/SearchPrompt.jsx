@@ -17,7 +17,7 @@ const SearchPrompt = ({ handleInputChange, findWord, empty, notFound }) => {
            className={`${defaultClass}__container-input__input ${defaultClass}__container-input__input--${theme} ${empty ? `${defaultClass}__container-input__input--red` : ""}`}
   
          type="text"
-          placeholder="Keyboard"
+          placeholder="Search for any word…"
           style={{ fontFamily: fontStyle }}
           onChange={handleInputChange}
           //Whoops, can’t be empty…
@@ -39,13 +39,15 @@ const SearchPrompt = ({ handleInputChange, findWord, empty, notFound }) => {
           </div>
         )}
       </div>
-    
+    <div  className={`${defaultClass}__container-img ${defaultClass}__container-img--${theme}`}
+   >
         <img
           onClick={findWord}
           className={`${defaultClass}__container-img__img ${defaultClass}__container-img__img--${theme}`}
           src={Shape}
           alt="shape"
         />
+        </div>
       </div>
   
   );

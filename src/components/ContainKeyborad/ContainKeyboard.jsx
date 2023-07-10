@@ -4,9 +4,13 @@ import { AppContext } from "../../context/index";
 import SearchPrompt from "../SearchPrompt/src/SearchPrompt";
 import MainTitle from "../MainTitle";
 import Menu from "../Menu";
-import LineLong from "../../assets/line-long.svg";
+import LineLongMobile from "../../assets/line-long-mobile.svg";
+import LineLongTablet from "../../assets/line-long-tablet.svg";
+import LineLongDesktop from "../../assets/line-long-desktop.svg";
+
 import MainInformation from "../MainInformation";
 import MainSource from "../MainSource";
+const defaultClass = "containKeyboard-img";
 
 const buildPhonetics = (phonetics) => {
   return {
@@ -72,36 +76,54 @@ const ContainKeyboard = () => {
         .then((result) => {
           if (result.status === 200) {
             setWord(() => formatWord(result[0]));
-            setNotFound(false)
-            setEmpty(false)
+            setNotFound(false);
+            setEmpty(false);
           }
           if (result.status === 404) {
-            setNotFound(true)
-            setEmpty(false)
+            setNotFound(true);
+            setEmpty(false);
             setWord(() => {});
-  
           }
         })
         .catch((error) => {
           console.error(error);
         });
     } else {
-      setEmpty(true)
-      setNotFound(false)
-    setWord(() => {});
+      setEmpty(true);
+      setNotFound(false);
+      setWord(() => {});
     }
   };
 
   return (
     <div className={`containKeyboard containKeyboard--${theme}`}>
       <Menu />
-      <SearchPrompt empty={empty} notFound={notFound} findWord={findWord} handleInputChange={handleInputChange} />
+      <SearchPrompt
+        empty={empty}
+        notFound={notFound}
+        findWord={findWord}
+        handleInputChange={handleInputChange}
+      />
       {word && word.word && (
         <>
           <MainTitle title={word && word.word} phonetic={word?.phonetic} />
           <MainInformation meanings={word && word.meanings} />
-          <div className="containKeyboard-img">
-            <img src={LineLong} alt="" />
+          <div className={`${defaultClass}`}>
+            <img
+              className={`${defaultClass}__image--mobile`}
+              src={LineLongMobile}
+              alt="Imagen para mobile"
+            />
+            <img
+              className={`${defaultClass}__image--tablet`}
+              src={LineLongTablet}
+              alt="Imagen para tablet"
+            />
+            <img
+              className={`${defaultClass}__image--desktop`}
+              src={LineLongDesktop}
+              alt="Imagen para desktop"
+            />
           </div>
           <MainSource source={word && word.source} />
         </>
