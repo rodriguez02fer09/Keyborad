@@ -4,12 +4,14 @@ import { AppContext } from "../../context/index";
 import SearchPrompt from "../SearchPrompt/src/SearchPrompt";
 import MainTitle from "../MainTitle";
 import Menu from "../Menu";
+
 import LineLongMobile from "../../assets/line-long-mobile.svg";
 import LineLongTablet from "../../assets/line-long-tablet.svg";
 import LineLongDesktop from "../../assets/line-long-desktop.svg";
 
 import MainInformation from "../MainInformation";
 import MainSource from "../MainSource";
+
 const defaultClass = "containKeyboard-img";
 
 const buildPhonetics = (phonetics) => {
@@ -94,7 +96,7 @@ const ContainKeyboard = () => {
       setWord(() => {});
     }
   };
-
+  
   return (
     <div className={`containKeyboard containKeyboard--${theme}`}>
       <Menu />
@@ -106,7 +108,7 @@ const ContainKeyboard = () => {
       />
       {word && word.word && (
         <>
-          <MainTitle title={word && word.word} phonetic={word?.phonetic} />
+          <MainTitle title={word && word.word} phonetic={word?.phonetic}  urlAudio={word.phonetic.audio} />
           <MainInformation meanings={word && word.meanings} />
           <div className={`${defaultClass}`}>
             <img
