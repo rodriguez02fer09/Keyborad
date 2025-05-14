@@ -1,18 +1,21 @@
-import React, { useContext } from "react";
-import "../index.scss";
-import DarkMode from "../DarkMode";
-import LineVertical from "../../../assets/line-vertical.svg";
-import ModeFonts from "../ModeFonts";
-import IconBook from "../../../assets/iconBook.svg";
-import { AppContext } from "../../../context/index";
+import React, {useContext} from 'react'
+import '../index.scss'
+import DarkMode from '../DarkMode/src/DarkMode'
+
+import LineVertical from '../../../assets/line-vertical.svg'
+import ModeFonts from '../ModeFonts'
+import IconBook from '../../../assets/iconBook.svg'
+import {AppContext} from '../../../context/index'
 
 const Menu = () => {
-  const { theme, fontStyle } = useContext(AppContext);
-  const defaultClass = "containMode";
+  const {theme, fontStyle} = useContext(AppContext)
+  const defaultClass = 'containMode'
 
   return (
     <div className={`${defaultClass} ${defaultClass}--${theme}`}>
-      <div className={`${defaultClass}__IconBook ${defaultClass}__IconBook--${theme}`}>
+      <div
+        className={`${defaultClass}__IconBook ${defaultClass}__IconBook--${theme}`}
+      >
         <img src={IconBook} alt="" />
       </div>
       <ModeFonts />
@@ -21,7 +24,7 @@ const Menu = () => {
         <img src={LineVertical} alt="" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu
