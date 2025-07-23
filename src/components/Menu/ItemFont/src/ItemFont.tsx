@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import "../index.scss";
-import List from "../../../../assets/list-mode-fonts.svg";
-import { AppContext } from "../../../../context/index";;
+import React, {useContext} from 'react'
+import '../index.scss'
+import List from '../../../../assets/list-mode-fonts.svg'
+import {AppContext} from '../../../../context/AppContext'
 
-const ItemFont = ({ value, handlerOnClick }) => {
-  const { theme } = useContext(AppContext);
+const ItemFont = ({value, handlerOnClick}) => {
+  const {theme} = useContext(AppContext)
 
-  const defaultClass = "main-itemFont";
+  const defaultClass = 'main-itemFont'
 
   return (
     <div
@@ -21,13 +21,13 @@ const ItemFont = ({ value, handlerOnClick }) => {
           type="text"
           placeholder="Serif"
           value={value}
-          onChange={(event) => handleFontStyleChange(event)}
-          style={{ fontFamily: value }}
-        //   {isEmpty && ( la casilla desocupada 
-        //     <div className={`${defaultClass}__error ${custonClass}__error `}>
-        //       No results
-        //     </div>
-        // )}
+          onChange={event => handleFontStyleChange(event)}
+          style={{fontFamily: value}}
+          //   {isEmpty && ( la casilla desocupada
+          //     <div className={`${defaultClass}__error ${custonClass}__error `}>
+          //       No results
+          //     </div>
+          // )}
         />
       </div>
       <div
@@ -40,6 +40,6 @@ const ItemFont = ({ value, handlerOnClick }) => {
         />
       </div>
     </div>
-  );
-};
-export default ItemFont;
+  )
+}
+export default ItemFont

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {AppContext} from '../../../../context/index'
+import {AppContext} from '../../../../context/AppContext'
 import '../index.scss'
 import DarkModeNormal from '../../../../assets/dar-mode-normal.svg'
 import DarkModeDark from '../../../../assets/dark-mode-hover.svg'

@@ -1,14 +1,14 @@
-import React,{useContext} from "react";
-import "../index.scss"
-import {AppContext} from "../../../../context/index"
+import React, {useContext} from 'react'
+import '../index.scss'
+import {AppContext} from '../../../../context/AppContext'
 
-const TitleMeaning = ()=>{
-    const { fontStyle } = useContext(AppContext)
+const TitleMeaning = () => {
+  const {fontStyle} = useContext(AppContext)
 
-    return(
-        <div className="titleMeaning" >
-            <p style={{ fontFamily: fontStyle }}>Meaning</p>
-        </div>
-    )
+  return (
+    <div className="titleMeaning">
+      <p style={{fontFamily: fontStyle}}>Meaning</p>
+    </div>
+  )
 }
-export default TitleMeaning;
+export default TitleMeaning

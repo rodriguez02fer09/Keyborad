@@ -5,7 +5,7 @@ import DarkMode from '../DarkMode/src/DarkMode'
 import LineVertical from '../../../assets/line-vertical.svg'
 import ModeFonts from '../ModeFonts'
 import IconBook from '../../../assets/iconBook.svg'
-import {AppContext} from '../../../context/index'
+import {AppContext} from '../../../context/AppContext'
 
 const Menu = () => {
   const {theme, fontStyle} = useContext(AppContext)
