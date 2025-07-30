@@ -1,5 +1,4 @@
-import React, {createContext, useState} from 'react'
-
+import React, {createContext, useState, type ReactNode, type FC} from 'react'
 //contexto del modo dark - theme
 // export const ThemeContext = createContext();
 
@@ -42,15 +41,31 @@ import React, {createContext, useState} from 'react'
 
 // const context = { theme:"light" , fontStyle:"Sans Serif" }
 
-export const AppContext = createContext()
+type ThemeType = 'dark' | 'light'
+type FontStyleType = 'Sans Serif' | string
 
-export const ContextProvider = ({children}) => {
-  const [context, setContext] = useState({
+type AppContextType = {
+  theme: ThemeType
+  fontStyle: FontStyleType
+  toggleTheme: () => void
+  isDark: () => boolean
+  handleFontStyleChange: (font: FontStyleType) => void
+}
+export const AppContext = createContext<AppContextType>({} as AppContextType)
+
+type ContextProviderProps = {
+  children: ReactNode
+}
+export const ContextProvider: FC<ContextProviderProps> = ({children}) => {
+  const [context, setContext] = useState<{
+    theme: ThemeType
+    fontStyle: FontStyleType
+  }>({
     theme: 'light',
     fontStyle: 'Sans Serif',
   })
 
-  const handleFontStyleChange = font => {
+  const handleFontStyleChange = (font: FontStyleType) => {
     setContext(state => {
       return {
         ...state,
