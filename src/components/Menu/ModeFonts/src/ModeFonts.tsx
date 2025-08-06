@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react'
 import '../index.scss'
-import ContItemFonts from '../../ContItem-Fonts/index.txs'
+import ContItemFonts from '../../ContItem-Fonts/index.tsx'
 import ItemFont from '../../ItemFont'
 import {AppContext} from '../../../../context/AppContext'
 

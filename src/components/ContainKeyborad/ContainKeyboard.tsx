@@ -14,14 +14,25 @@ import MainSource from '../MainSource'
 
 const defaultClass = 'containKeyboard-img'
 
-const buildPhonetics = phonetics => {
+type Phonetic = {
+  text: string
+  audio: string
+}
+
+type Meaning = any
+const buildPhonetics = (phonetics: Phonetic[]): Phonetic => {
   return {
     text: phonetics.find(phonetic => phonetic.text !== '')?.text || '',
     audio: phonetics.find(phonetic => phonetic.audio !== '')?.audio || '',
   }
 }
-
-const formatWord = meaningWord => {
+type FormatWord = {
+  word: string
+  phonetics: Phonetic
+  meanings: Meaning
+  source: string[]
+}
+const formatWord = (meaningWord: any): FormatWord => {
   if (meaningWord?.word) {
     const {word = '', phonetics, meanings, sourceUrls} = meaningWord
     return {
@@ -34,7 +45,7 @@ const formatWord = meaningWord => {
   return {}
 }
 
-const getWordDefinition = async word => {
+const getWordDefinition = async (word: string) => {
   try {
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
@@ -49,23 +60,37 @@ const getWordDefinition = async word => {
   }
 }
 
-const reducer = (state, action) => {
+type State = {
+  word: string
+}
+type Action = {
+  type: 'update_word'
+  newWord: string
+}
+const reducer = (state: State, action: Action): State => {
   if (action.type === 'update_word') {
     return {
       ...state,
-      word: action.newWord, //newWord -payload
+      word: action.newWord,
     }
   }
+  return state
 }
 
 const ContainKeyboard = () => {
   const {theme} = useContext(AppContext)
   const [state, dispactch] = useReducer(reducer, {word: ''})
-  const [word, setWord] = useState()
+  const [word, setWord] = useState<FormatWord | null>(null)
   const [empty, setEmpty] = useState(false)
   const [notFound, setNotFound] = useState(false)
 
-  const handleInputChange = e => {
+  type Props = {
+    empty: boolean
+    notFound: boolean
+    findWord: () => void
+    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  }
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispactch({
       type: 'update_word',
       newWord: e.target.value,
@@ -84,7 +109,7 @@ const ContainKeyboard = () => {
           if (result.status === 404) {
             setNotFound(true)
             setEmpty(false)
-            setWord(() => {})
+            setWord(null)
           }
         })
         .catch(error => {
@@ -93,7 +118,7 @@ const ContainKeyboard = () => {
     } else {
       setEmpty(true)
       setNotFound(false)
-      setWord(() => {})
+      setWord(null)
     }
   }
 
