@@ -5,13 +5,17 @@ import '../index.scss'
 import BottonNormal from '../../../../assets/play-button-normal.svg'
 import BottonHover from '../../../../assets/play-button-hover.svg'
 
-const Button = ({urlAudio}) => {
+type Props = {
+  urlAudio: string
+}
+
+const Button = ({urlAudio}: Props): JSX.Element => {
   const {isDark} = useContext(AppContext)
 
-  const handlePlaying = () => {
+  const handlePlaying = (): void => {
     const sound = new Howl({
       src: [urlAudio],
-      html5: true, // para asegurar compatibilidad con Vercel
+      html5: true,
       onend: () => {
         console.log('Reproducción finalizada')
       },

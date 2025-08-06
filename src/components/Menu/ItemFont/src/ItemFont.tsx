@@ -3,7 +3,12 @@ import '../index.scss'
 import List from '../../../../assets/list-mode-fonts.svg'
 import {AppContext} from '../../../../context/AppContext'
 
-const ItemFont = ({value, handlerOnClick}) => {
+type Props = {
+  value: string
+  handlerOnClick: () => void
+}
+
+const ItemFont = ({value, handlerOnClick}: Props): JSX.Element => {
   const {theme} = useContext(AppContext)
 
   const defaultClass = 'main-itemFont'

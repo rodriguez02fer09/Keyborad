@@ -1,61 +1,30 @@
 import React, {createContext, useState, type ReactNode, type FC} from 'react'
-//contexto del modo dark - theme
-// export const ThemeContext = createContext();
 
-// export const ThemeProvider = ({ children }) => {
-//   const [theme, setTheme] = useState("dark");
+export type ThemeType = 'dark' | 'light'
+export type FontStyleType = 'Sans Serif' | string
 
-//   const toggleTheme = () => {
-//     setTheme(theme === "light" ? "dark" : "light");
-//   };
-
-//   const isDark = () => {
-//     return theme === "dark";
-//   };
-
-//   return (
-//     <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>
-//       {children}
-//     </ThemeContext.Provider>
-//   );
-// };
-
-// //contexto del style font
-// export const FontContext = createContext();
-
-// export const FontProvider = ({ children }) => {
-//   const [fontStyle, setFontStyle] = useState("Sans Serif");
-
-//   const handleFontStyleChange = (font) => {
-//     setFontStyle(() => font);
-//   };
-
-//   return (
-//     <FontContext.Provider
-//       value={{ fontStyle, handleFontStyleChange  }}
-//     >
-//       {children}
-//     </FontContext.Provider>
-//   );
-// };
-
-// const context = { theme:"light" , fontStyle:"Sans Serif" }
-
-type ThemeType = 'dark' | 'light'
-type FontStyleType = 'Sans Serif' | string
-
-type AppContextType = {
+export type AppContextType = {
   theme: ThemeType
   fontStyle: FontStyleType
   toggleTheme: () => void
   isDark: () => boolean
   handleFontStyleChange: (font: FontStyleType) => void
 }
-export const AppContext = createContext<AppContextType>({} as AppContextType)
+
+const initialContext: AppContextType = {
+  theme: 'light',
+  fontStyle: 'Sans Serif',
+  toggleTheme: () => {},
+  isDark: () => false,
+  handleFontStyleChange: () => {},
+}
+
+export const AppContext = createContext<AppContextType>(initialContext)
 
 type ContextProviderProps = {
   children: ReactNode
 }
+
 export const ContextProvider: FC<ContextProviderProps> = ({children}) => {
   const [context, setContext] = useState<{
     theme: ThemeType
@@ -66,26 +35,17 @@ export const ContextProvider: FC<ContextProviderProps> = ({children}) => {
   })
 
   const handleFontStyleChange = (font: FontStyleType) => {
-    setContext(state => {
-      return {
-        ...state,
-        fontStyle: font,
-      }
-    })
+    setContext(prev => ({...prev, fontStyle: font}))
   }
 
   const toggleTheme = () => {
-    setContext(state => {
-      return {
-        ...state,
-        theme: state.theme === 'light' ? 'dark' : 'light',
-      }
-    })
+    setContext(prev => ({
+      ...prev,
+      theme: prev.theme === 'light' ? 'dark' : 'light',
+    }))
   }
 
-  const isDark = () => {
-    return context.theme === 'dark'
-  }
+  const isDark = () => context.theme === 'dark'
 
   return (
     <AppContext.Provider

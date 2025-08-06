@@ -3,7 +3,19 @@ import '../style/searchPrompt.scss'
 import Shape from '../../../assets/shape.svg'
 import {AppContext} from '../../../context/AppContext'
 
-const SearchPrompt = ({handleInputChange, findWord, empty, notFound}) => {
+type Props = {
+  empty: boolean
+  notFound: boolean
+  findWord: () => void
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const SearchPrompt = ({
+  handleInputChange,
+  findWord,
+  empty,
+  notFound,
+}: Props) => {
   const {theme, fontStyle} = useContext(AppContext)
 
   const defaultClass = 'search-prompt'

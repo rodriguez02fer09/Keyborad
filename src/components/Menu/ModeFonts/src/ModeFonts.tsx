@@ -1,16 +1,21 @@
 import React, {useState, useContext} from 'react'
 import '../index.scss'
-import ContItemFonts from '../../ContItem-Fonts/index.tsx'
+import ContItemFonts from '../../ContItem-Fonts/index.js'
 import ItemFont from '../../ItemFont'
 import {AppContext} from '../../../../context/AppContext'
 
-const fonts = [
+type FontsOption = {
+  label: string
+  font: string
+}
+
+const fonts: FontsOption[] = [
   {label: 'Sans Serif', font: 'Open Sans '},
   {label: 'Serif', font: 'PT Serif'},
   {label: 'Mono', font: 'Roboto Mono'},
 ]
 
-const ModeFonts = () => {
+const ModeFonts = (): JSX.Element => {
   const [open, setOpen] = useState(false)
   const {fontStyle, handleFontStyleChange} = useContext(AppContext)
   const [currentFont, setCurrentFont] = useState(fontStyle)
@@ -19,7 +24,7 @@ const ModeFonts = () => {
     setOpen(state => !state)
   }
 
-  const selectFont = f => {
+  const selectFont = (f: FontsOption): void => {
     setOpen(!open)
     setCurrentFont(() => f.label)
     handleFontStyleChange(f.font)

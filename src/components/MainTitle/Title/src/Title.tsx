@@ -1,8 +1,16 @@
 import React, {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
+type Phonetic = {
+  text: string
+  audio: string
+}
 
-const Title = ({title, phonetic}) => {
+type Props = {
+  title: string
+  phonetic: Phonetic
+}
+const Title = ({title, phonetic}: Props) => {
   const {fontStyle, theme} = useContext(AppContext)
   const defaultClass = 'title'
 

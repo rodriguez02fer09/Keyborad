@@ -7,8 +7,9 @@ import ModeFonts from '../ModeFonts'
 import IconBook from '../../../assets/iconBook.svg'
 import {AppContext} from '../../../context/AppContext'
 
-const Menu = () => {
+const Menu = (): JSX.Element => {
   const {theme, fontStyle} = useContext(AppContext)
+
   const defaultClass = 'containMode'
 
   return (

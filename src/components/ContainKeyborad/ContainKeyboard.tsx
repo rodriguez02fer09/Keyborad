@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useReducer, useState} from 'react'
+import React, {useContext, useReducer, useState} from 'react'
 import './containKeyboard.scss'
 import {AppContext} from '../../context/AppContext'
 import SearchPrompt from '../SearchPrompt/src/SearchPrompt'
@@ -20,29 +20,49 @@ type Phonetic = {
 }
 
 type Meaning = any
-const buildPhonetics = (phonetics: Phonetic[]): Phonetic => {
-  return {
-    text: phonetics.find(phonetic => phonetic.text !== '')?.text || '',
-    audio: phonetics.find(phonetic => phonetic.audio !== '')?.audio || '',
-  }
-}
+
 type FormatWord = {
   word: string
-  phonetics: Phonetic
+  phonetic: Phonetic
   meanings: Meaning
   source: string[]
 }
+
+type State = {
+  word: string
+}
+
+type Action = {
+  type: 'update_word'
+  newWord: string
+}
+
+// Función auxiliar
+const buildPhonetics = (phonetics: Phonetic[]): Phonetic => {
+  return {
+    text: phonetics.find(p => p.text !== '')?.text || '',
+    audio: phonetics.find(p => p.audio !== '')?.audio || '',
+  }
+}
+
 const formatWord = (meaningWord: any): FormatWord => {
   if (meaningWord?.word) {
     const {word = '', phonetics, meanings, sourceUrls} = meaningWord
     return {
       word,
       phonetic: buildPhonetics(phonetics),
-      meanings: meanings,
+      meanings,
       source: sourceUrls,
     }
   }
-  return {}
+
+  // fallback para evitar crash
+  return {
+    word: '',
+    phonetic: {text: '', audio: ''},
+    meanings: [],
+    source: [],
+  }
 }
 
 const getWordDefinition = async (word: string) => {
@@ -57,16 +77,11 @@ const getWordDefinition = async (word: string) => {
     }
   } catch (err) {
     console.error(err)
+    return {status: 500}
   }
 }
 
-type State = {
-  word: string
-}
-type Action = {
-  type: 'update_word'
-  newWord: string
-}
+// Reducer
 const reducer = (state: State, action: Action): State => {
   if (action.type === 'update_word') {
     return {
@@ -77,36 +92,30 @@ const reducer = (state: State, action: Action): State => {
   return state
 }
 
-const ContainKeyboard = () => {
+// Componente principal
+const ContainKeyboard = (): JSX.Element => {
   const {theme} = useContext(AppContext)
-  const [state, dispactch] = useReducer(reducer, {word: ''})
+  const [state, dispatch] = useReducer(reducer, {word: ''})
   const [word, setWord] = useState<FormatWord | null>(null)
   const [empty, setEmpty] = useState(false)
   const [notFound, setNotFound] = useState(false)
 
-  type Props = {
-    empty: boolean
-    notFound: boolean
-    findWord: () => void
-    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  }
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispactch({
+    dispatch({
       type: 'update_word',
       newWord: e.target.value,
     })
   }
 
   const findWord = () => {
-    if (state.word !== '') {
+    if (state.word.trim() !== '') {
       getWordDefinition(state.word)
         .then(result => {
           if (result.status === 200) {
-            setWord(() => formatWord(result[0]))
+            setWord(formatWord(result[0]))
             setNotFound(false)
             setEmpty(false)
-          }
-          if (result.status === 404) {
+          } else if (result.status === 404) {
             setNotFound(true)
             setEmpty(false)
             setWord(null)
@@ -131,15 +140,15 @@ const ContainKeyboard = () => {
         findWord={findWord}
         handleInputChange={handleInputChange}
       />
-      {word && word.word && (
+      {word?.word && (
         <>
           <MainTitle
-            title={word && word.word}
-            phonetic={word?.phonetic}
+            title={word.word}
+            phonetic={word.phonetic}
             urlAudio={word.phonetic.audio}
           />
-          <MainInformation meanings={word && word.meanings} />
-          <div className={`${defaultClass}`}>
+          <MainInformation meanings={word.meanings} />
+          <div className={defaultClass}>
             <img
               className={`${defaultClass}__image--mobile`}
               src={LineLongMobile}
@@ -156,7 +165,7 @@ const ContainKeyboard = () => {
               alt="Imagen para desktop"
             />
           </div>
-          <MainSource source={word && word.source} />
+          <MainSource source={word.source} />
         </>
       )}
     </div>
@@ -164,16 +173,3 @@ const ContainKeyboard = () => {
 }
 
 export default ContainKeyboard
-
-// const obj = {
-//   nombre: "ggg"
-// }
-// const {nombre}= obj
-// const atributo = "nombre"
-// const val = obj[`${nombre}`];
-
-//que es un mapeo pasar de un formato a otro formatoa otro objeto
-
-// if (meaningWord?.word) el signo pregunta valida si un objeto exuste
-
-// meaningWord && meaningWord.word esto es igual meaningWord?.word
