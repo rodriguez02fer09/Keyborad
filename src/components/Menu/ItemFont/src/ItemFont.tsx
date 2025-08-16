@@ -3,13 +3,13 @@ import '../index.scss'
 import List from '../../../../assets/list-mode-fonts.svg'
 import {AppContext} from '../../../../context/AppContext'
 
-type Props = {
+interface ItemFontProps {
   value: string
   handlerOnClick: () => void
 }
 
-const ItemFont = ({value, handlerOnClick}: Props): JSX.Element => {
-  const {theme} = useContext(AppContext)
+const ItemFont = ({value, handlerOnClick}: ItemFontProps): JSX.Element => {
+  const {theme, handleFontStyleChange} = useContext(AppContext)
 
   const defaultClass = 'main-itemFont'
 
@@ -26,7 +26,7 @@ const ItemFont = ({value, handlerOnClick}: Props): JSX.Element => {
           type="text"
           placeholder="Serif"
           value={value}
-          onChange={event => handleFontStyleChange(event)}
+          onChange={e => handleFontStyleChange(e.target.value)}
           style={{fontFamily: value}}
           //   {isEmpty && ( la casilla desocupada
           //     <div className={`${defaultClass}__error ${custonClass}__error `}>

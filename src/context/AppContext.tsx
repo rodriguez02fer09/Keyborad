@@ -3,7 +3,7 @@ import React, {createContext, useState, type ReactNode, type FC} from 'react'
 export type ThemeType = 'dark' | 'light'
 export type FontStyleType = 'Sans Serif' | string
 
-export type AppContextType = {
+export interface AppContextType {
   theme: ThemeType
   fontStyle: FontStyleType
   toggleTheme: () => void

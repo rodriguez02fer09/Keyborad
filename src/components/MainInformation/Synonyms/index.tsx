@@ -1,3 +1,3 @@
-import Synonyms from "./src/Synonyms";
+import Synonyms from './src/Synonyms'
 
-export default Synonyms;
+export default Synonyms

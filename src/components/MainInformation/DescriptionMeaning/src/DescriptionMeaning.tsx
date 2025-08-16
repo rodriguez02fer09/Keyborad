@@ -2,27 +2,35 @@ import React, {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
 
-const DescriptionMeaning = ({isDark, definitions}) => {
-  const defaultClass = `main-descriptionMeaning`
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`
-  const {theme, fontStyle} = useContext(AppContext)
+// Reutiliza el tipo Definition desde un archivo centralizado si es posible
+interface Definition {
+  definition: string
+  example: string
+}
+
+interface PropsDefinitions {
+  definitions: Definition[]
+}
+
+const DescriptionMeaning = ({definitions}: PropsDefinitions): JSX.Element => {
+  const {theme, fontStyle, isDark} = useContext(AppContext)
+  const baseClass = 'main-descriptionMeaning'
+  const darkClass = isDark() ? `${baseClass}--dark` : ''
 
   return (
-    <div className={`${defaultClass} ${custonClass}`}>
-      <ul className={`${defaultClass}__list ${custonClass}__list--${theme}`}>
-        {definitions &&
-          definitions.length > 0 &&
-          definitions.map(({definition, example}, index) => (
-            <React.Fragment key={index}>
-              <li
-                className={`${defaultClass}__list__desfinitions ${custonClass}__list__desfinitions--${theme}`}
-                style={{fontFamily: fontStyle}}
-              >
-                {definition}
-              </li>
-              <p>{example}</p>
-            </React.Fragment>
-          ))}
+    <div className={`${baseClass} ${darkClass}`}>
+      <ul className={`${baseClass}__list ${baseClass}__list--${theme}`}>
+        {definitions.map(({definition, example}, idx) => (
+          <React.Fragment key={idx}>
+            <li
+              className={`${baseClass}__list__definition ${baseClass}__list__definition--${theme}`}
+              style={{fontFamily: fontStyle}}
+            >
+              {definition}
+            </li>
+            {example && <p>{example}</p>}
+          </React.Fragment>
+        ))}
       </ul>
     </div>
   )

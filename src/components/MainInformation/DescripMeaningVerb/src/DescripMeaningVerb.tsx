@@ -3,10 +3,11 @@ import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
 import TitleMeaning from '../../TitleMeaning'
 
-const ContainMeaningVerb = ({isDark}) => {
+const ContainMeaningVerb = ({}) => {
+  const {fontStyle, isDark} = useContext(AppContext)
   const defaultClass = `main-containMeaningVerb`
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`
-  const {fontStyle} = useContext(AppContext)
+  const custonClass = isDark() ? `${defaultClass}--dark` : ''
+
   return (
     <div className={`${defaultClass} ${custonClass}`}>
       <TitleMeaning />

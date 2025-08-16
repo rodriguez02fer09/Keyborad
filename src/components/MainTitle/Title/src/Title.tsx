@@ -1,12 +1,13 @@
 import React, {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
-type Phonetic = {
+
+interface Phonetic {
   text: string
   audio: string
 }
 
-type Props = {
+interface Props {
   title: string
   phonetic: Phonetic
 }

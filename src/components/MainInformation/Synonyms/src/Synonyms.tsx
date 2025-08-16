@@ -2,28 +2,29 @@ import React, {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
 
-const Synonyms = ({isDark, values}) => {
-  const {fontStyle} = useContext(AppContext)
+interface PropsSynonyms {
+  values: string[]
+}
+
+const Synonyms = ({values}: PropsSynonyms): JSX.Element => {
+  const {fontStyle, isDark} = useContext(AppContext)
   const defaultClass = `main-synonyms`
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`
+  const darkClass = isDark() ? `${defaultClass}--dark` : ''
+
   return (
-    <div className={`${defaultClass} ${custonClass}`}>
-      <div className={`${defaultClass}__title ${custonClass}__title`}>
+    <div className={`${defaultClass} ${darkClass}`}>
+      <div className={`${defaultClass}__title ${darkClass}__title`}>
         <p style={{fontFamily: fontStyle}}>Synonyms</p>
       </div>
-      <div
-        className={`${defaultClass}__description ${custonClass}__description`}
-      >
-        {values.map((value, index) => {
-          return (
-            <p key={index} style={{fontFamily: fontStyle}}>
-              {' '}
-              {value}
-            </p>
-          )
-        })}
+      <div className={`${defaultClass}__description ${darkClass}__description`}>
+        {values.map((value, index) => (
+          <p key={index} style={{fontFamily: fontStyle}}>
+            {value}
+          </p>
+        ))}
       </div>
     </div>
   )
 }
+
 export default Synonyms

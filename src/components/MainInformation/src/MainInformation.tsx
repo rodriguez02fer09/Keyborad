@@ -4,22 +4,37 @@ import TitleMeaning from '../TitleMeaning'
 import DescriptionMeaning from '../DescriptionMeaning'
 import {AppContext} from '../../../context/AppContext'
 import Synonyms from '../Synonyms'
-
 import '../index.scss'
 
-const MainInformation = ({isDark, index, meanings = []}) => {
-  const defaultClass = `main-containMeaning`
-  const {fontStyle} = useContext(AppContext)
+interface Definition {
+  definition: string
+  example: string
+}
 
-  const custonClass = `${isDark ? `${defaultClass}--dark` : `${defaultClass}`}`
+interface Meaning {
+  partOfSpeech: string
+  definitions: Definition[]
+  synonyms: string[]
+}
+
+interface PropsMainInformation {
+  meanings: Meaning[]
+}
+
+const MainInformation = ({
+  meanings = [],
+}: PropsMainInformation): JSX.Element => {
+  const defaultClass = `main-containMeaning`
+  const {fontStyle, isDark} = useContext(AppContext)
+  const customClass = isDark() ? `${defaultClass}--dark` : ''
+
   return (
     <div
-      key={index}
-      className={`${defaultClass} ${custonClass}`}
+      className={`${defaultClass} ${customClass}`}
       style={{fontFamily: fontStyle}}
     >
-      {meanings.map(({partOfSpeech, definitions, synonyms}, index) => (
-        <React.Fragment key={index}>
+      {meanings.map(({partOfSpeech, definitions, synonyms}, idx) => (
+        <React.Fragment key={idx}>
           <Section text={partOfSpeech} />
           <TitleMeaning />
           <DescriptionMeaning definitions={definitions} />
@@ -29,4 +44,5 @@ const MainInformation = ({isDark, index, meanings = []}) => {
     </div>
   )
 }
+
 export default MainInformation

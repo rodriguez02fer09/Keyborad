@@ -3,7 +3,7 @@ import '../style/searchPrompt.scss'
 import Shape from '../../../assets/shape.svg'
 import {AppContext} from '../../../context/AppContext'
 
-type Props = {
+interface PropsSearchPrompt {
   empty: boolean
   notFound: boolean
   findWord: () => void
@@ -15,7 +15,7 @@ const SearchPrompt = ({
   findWord,
   empty,
   notFound,
-}: Props) => {
+}: PropsSearchPrompt): JSX.Element => {
   const {theme, fontStyle} = useContext(AppContext)
 
   const defaultClass = 'search-prompt'

@@ -2,16 +2,16 @@ import React, {PropsWithChildren, useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
 
-type FontOption = {
+interface FontOption {
   label: string
   font: string
 }
 
-type Props = {
+interface ItemFontProps {
   fonts: FontOption[]
   handlerClick: (f: FontOption) => void
 }
-const ContItemFonts = ({fonts, handlerClick}: Props): JSX.Element => {
+const ContItemFonts = ({fonts, handlerClick}: ItemFontProps): JSX.Element => {
   const {theme, fontStyle} = useContext(AppContext)
 
   const defaultClass = 'contItemFonts'

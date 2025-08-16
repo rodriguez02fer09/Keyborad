@@ -12,17 +12,17 @@ type Props = {
   title: string
   phonetic: Phonetic
   urlAudio: string
-  handlePlaying: (e: React.MouseEvent<HTMLButtonElement>) => void
-  onFinishedPlaying: (e: React.MouseEvent<HTMLButtonElement>) => void
+  // handlePlaying: (e: React.MouseEvent<HTMLButtonElement>) => void
+  //onFinishedPlaying: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const MainTitle = ({
   title,
   phonetic,
   urlAudio,
-  handlePlaying,
-  onFinishedPlaying,
-}: Props): JSX.Element => {
+}: //handlePlaying,
+//onFinishedPlaying,
+Props): JSX.Element => {
   return (
     <div className="ContainTitleButton">
       <Title
