@@ -15,7 +15,7 @@ const SearchPrompt = ({
   findWord,
   empty,
   notFound,
-}: PropsSearchPrompt): JSX.Element => {
+}: PropsSearchPrompt) => {
   const {theme, fontStyle} = useContext(AppContext)
 
   const defaultClass = 'search-prompt'

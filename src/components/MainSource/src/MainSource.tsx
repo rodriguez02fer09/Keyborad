@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../context/AppContext'
 
@@ -6,7 +6,7 @@ interface PropMainSource {
   source: string[]
 }
 
-const MainSource = ({source}: PropMainSource): JSX.Element => {
+const MainSource = ({source}: PropMainSource) => {
   const {theme, fontStyle} = useContext(AppContext)
   const defaultClass = 'main-source'
 

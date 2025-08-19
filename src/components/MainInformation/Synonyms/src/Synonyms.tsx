@@ -6,7 +6,7 @@ interface PropsSynonyms {
   values: string[]
 }
 
-const Synonyms = ({values}: PropsSynonyms): JSX.Element => {
+const Synonyms = ({values}: PropsSynonyms) => {
   const {fontStyle, isDark} = useContext(AppContext)
   const defaultClass = `main-synonyms`
   const darkClass = isDark() ? `${defaultClass}--dark` : ''

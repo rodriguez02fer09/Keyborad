@@ -93,7 +93,7 @@ const reducer = (state: State, action: Action): State => {
 }
 
 // Componente principal
-const ContainKeyboard = (): JSX.Element => {
+const ContainKeyboard: React.FC = () => {
   const {theme} = useContext(AppContext)
   const [state, dispatch] = useReducer(reducer, {word: ''})
   const [word, setWord] = useState<FormatWord | null>(null)

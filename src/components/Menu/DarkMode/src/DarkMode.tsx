@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import {AppContext} from '../../../../context/AppContext'
 import '../index.scss'
 import DarkModeNormal from '../../../../assets/dar-mode-normal.svg'
 import DarkModeDark from '../../../../assets/dark-mode-hover.svg'
 
-const DarkMode = (): JSX.Element => {
+const DarkMode = () => {
   const {toggleTheme, isDark} = useContext(AppContext)
 
   return (

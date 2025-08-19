@@ -22,7 +22,7 @@ const MainTitle = ({
   urlAudio,
 }: //handlePlaying,
 //onFinishedPlaying,
-Props): JSX.Element => {
+Props) => {
   return (
     <div className="ContainTitleButton">
       <Title

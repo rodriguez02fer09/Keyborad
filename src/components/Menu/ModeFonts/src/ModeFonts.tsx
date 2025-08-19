@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import {useState, useContext} from 'react'
 import '../index.scss'
 import ContItemFonts from '../../ContItem-Fonts/index.js'
 import ItemFont from '../../ItemFont'
@@ -15,7 +15,7 @@ const fonts: FontsOption[] = [
   {label: 'Mono', font: 'Roboto Mono'},
 ]
 
-const ModeFonts = (): JSX.Element => {
+const ModeFonts = () => {
   const [open, setOpen] = useState(false)
   const {fontStyle, handleFontStyleChange} = useContext(AppContext)
   const [currentFont, setCurrentFont] = useState(fontStyle)

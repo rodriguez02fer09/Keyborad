@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import '../index.scss'
 import List from '../../../../assets/list-mode-fonts.svg'
 import {AppContext} from '../../../../context/AppContext'
@@ -8,7 +8,7 @@ interface ItemFontProps {
   handlerOnClick: () => void
 }
 
-const ItemFont = ({value, handlerOnClick}: ItemFontProps): JSX.Element => {
+const ItemFont = ({value, handlerOnClick}: ItemFontProps) => {
   const {theme, handleFontStyleChange} = useContext(AppContext)
 
   const defaultClass = 'main-itemFont'

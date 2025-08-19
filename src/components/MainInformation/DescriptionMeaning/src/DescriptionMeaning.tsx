@@ -12,7 +12,7 @@ interface PropsDefinitions {
   definitions: Definition[]
 }
 
-const DescriptionMeaning = ({definitions}: PropsDefinitions): JSX.Element => {
+const DescriptionMeaning = ({definitions}: PropsDefinitions) => {
   const {theme, fontStyle, isDark} = useContext(AppContext)
   const baseClass = 'main-descriptionMeaning'
   const darkClass = isDark() ? `${baseClass}--dark` : ''
