@@ -68,6 +68,17 @@ Aplicación interactiva de teclado desarrollada con ReactJS y SASS, que ofrece u
 
 ---
 
+## ✅ Migración a TypeScript
+
+Este proyecto fue migrado completamente a **TypeScript** para mejorar la escalabilidad, la calidad del código y la experiencia del desarrollador.  
+Ahora incluye:
+- Tipado estricto (`strict: true`)
+- Definiciones claras de props e interfaces
+- Soporte para componentes reutilizables en React
+- Mejor integración con herramientas como ESLint y Prettier
+
+
+
 ## 🤝 Contribuciones
 
 1. Haz un fork de este repositorio
