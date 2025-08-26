@@ -23,6 +23,7 @@ Aplicación interactiva de teclado desarrollada con ReactJS y SASS, que ofrece u
 ## 🛠 Tecnologías y Herramientas
 
 * **ReactJS**: para la construcción de la interfaz de usuario
+* **TypeScript**: tipado estático y escalabilidad del código
 * **SASS**: estilos modulares con anidamiento y variables
 * **Vite**: bundler y servidor de desarrollo rápido
 * **HTML5 & JavaScript**: marcado y lógica principal
@@ -51,7 +52,7 @@ Aplicación interactiva de teclado desarrollada con ReactJS y SASS, que ofrece u
    npm run dev
    ```
 
-   * Abre tu navegador en `http://localhost:5173` (o la URL que indique Vite).
+   Abre tu navegador en `http://localhost:5173` (o la URL que indique Vite).
 
 4. **Crear versión de producción**
 
@@ -65,19 +66,46 @@ Aplicación interactiva de teclado desarrollada con ReactJS y SASS, que ofrece u
    npm run preview
    ```
 
-
 ---
 
 ## ✅ Migración a TypeScript
 
 Este proyecto fue migrado completamente a **TypeScript** para mejorar la escalabilidad, la calidad del código y la experiencia del desarrollador.  
-Ahora incluye:
+Incluye:
+
 - Tipado estricto (`strict: true`)
 - Definiciones claras de props e interfaces
 - Soporte para componentes reutilizables en React
-- Mejor integración con herramientas como ESLint y Prettier
+- Mejor integración con ESLint y Prettier
 
+---
 
+## 🗂 Organización del Código y Tipos
+
+### 📁 `src/types`
+
+Contiene todas las definiciones de tipos TypeScript organizadas en módulos reutilizables:
+
+| Archivo         | Descripción                                                               |
+|----------------|---------------------------------------------------------------------------|
+| `context.ts`   | Define los tipos globales del contexto (tema, fuente, funciones del contexto) |
+| `global.ts`    | Contiene tipos reutilizables como `Phonetic`, `Meaning`, `Definition`, etc. |
+| `props.ts`     | Define los props de los componentes (`PropsSearchPrompt`, `MainTitleProps`, etc.) |
+
+### 💡 Buenas Prácticas Aplicadas
+
+- ✅ Tipos importados con `import type` para mantener el bundle liviano
+- ✅ Separación clara entre lógica, estilo y tipado
+- ✅ Uso de `type` para uniones literales (`'light' | 'dark'`) y `interface` para estructuras
+- ✅ Componentes fuertemente tipados en React
+
+Ejemplo:
+
+```tsx
+import type { PropsSearchPrompt } from '@/types/props'
+```
+
+---
 
 ## 🤝 Contribuciones
 
@@ -92,3 +120,4 @@ Ahora incluye:
 ## 📄 Licencia
 
 Este proyecto está licenciado bajo la [MIT License](LICENSE).
+
