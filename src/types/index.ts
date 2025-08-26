@@ -1,3 +1,3 @@
-export * from './Context'
-export * from './global'
+export * from './context'
+export type {Phonetic, Definition, Meaning, FontOption} from './global'
 export * from './props'

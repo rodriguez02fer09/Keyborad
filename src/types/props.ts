@@ -35,8 +35,3 @@ export interface PropsMainInformation {
 export interface PropsDefinitions {
   definitions: Definition[]
 }
-
-export interface ItemFontProps {
-  value: string
-  handlerOnClick: () => void
-}
