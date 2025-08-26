@@ -2,11 +2,7 @@ import {useContext} from 'react'
 import '../index.scss'
 import List from '../../../../assets/list-mode-fonts.svg'
 import {AppContext} from '../../../../context/AppContext'
-
-interface ItemFontProps {
-  value: string
-  handlerOnClick: () => void
-}
+import type {ItemFontProps} from '../../../../types/index'
 
 const ItemFont = ({value, handlerOnClick}: ItemFontProps) => {
   const {theme, handleFontStyleChange} = useContext(AppContext)

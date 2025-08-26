@@ -1,14 +1,9 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import '../style/searchPrompt.scss'
 import Shape from '../../../assets/shape.svg'
 import {AppContext} from '../../../context/AppContext'
 
-interface PropsSearchPrompt {
-  empty: boolean
-  notFound: boolean
-  findWord: () => void
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
+import type {PropsSearchPrompt} from '../../../types/index'
 
 const SearchPrompt = ({
   handleInputChange,

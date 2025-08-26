@@ -1,16 +1,8 @@
 import React, {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
-
+import type {PropsDefinitions} from '../../../../types/index'
 // Reutiliza el tipo Definition desde un archivo centralizado si es posible
-interface Definition {
-  definition: string
-  example: string
-}
-
-interface PropsDefinitions {
-  definitions: Definition[]
-}
 
 const DescriptionMeaning = ({definitions}: PropsDefinitions) => {
   const {theme, fontStyle, isDark} = useContext(AppContext)

@@ -1,10 +1,7 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
-
-interface PropsSynonyms {
-  values: string[]
-}
+import type {PropsSynonyms} from '../../../../types/index'
 
 const Synonyms = ({values}: PropsSynonyms) => {
   const {fontStyle, isDark} = useContext(AppContext)

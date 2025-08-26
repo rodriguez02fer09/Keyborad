@@ -5,26 +5,12 @@ import DescriptionMeaning from '../DescriptionMeaning'
 import {AppContext} from '../../../context/AppContext'
 import Synonyms from '../Synonyms'
 import '../index.scss'
+import type {PropsMainInformation} from '../../../types/index'
+// Interfaces directamente en el archivo
 
-interface Definition {
-  definition: string
-  example: string
-}
-
-interface Meaning {
-  partOfSpeech: string
-  definitions: Definition[]
-  synonyms: string[]
-}
-
-interface PropsMainInformation {
-  meanings: Meaning[]
-}
-
-const MainInformation = ({
-  meanings = [],
-}: PropsMainInformation): JSX.Element => {
-  const defaultClass = `main-containMeaning`
+// Componente
+const MainInformation = ({meanings = []}: PropsMainInformation) => {
+  const defaultClass = 'main-containMeaning'
   const {fontStyle, isDark} = useContext(AppContext)
   const customClass = isDark() ? `${defaultClass}--dark` : ''
 

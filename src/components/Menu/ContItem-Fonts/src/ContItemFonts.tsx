@@ -1,45 +1,31 @@
 import {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
+import type {ItemFontProps} from '../../../../types/index'
 
-interface FontOption {
-  label: string
-  font: string
-}
-
-interface ItemFontProps {
-  fonts: FontOption[]
-  handlerClick: (f: FontOption) => void
-}
 const ContItemFonts = ({fonts, handlerClick}: ItemFontProps) => {
   const {theme, fontStyle} = useContext(AppContext)
-
-  const defaultClass = 'contItemFonts'
+  const baseClass = 'contItemFonts'
 
   return (
-    <div className={`${defaultClass} ${defaultClass}--${theme}`}>
+    <div className={`${baseClass} ${baseClass}--${theme}`}>
       <div
-        className={`${defaultClass}__container-listFont ${defaultClass}__container-listFont--${theme} `}
+        className={`${baseClass}__container-listFont ${baseClass}__container-listFont--${theme}`}
       >
-        {fonts.map((f, index) => {
-          const {font, label} = f
-          return (
-            <div key={index}>
-              <p
-                style={{fontFamily: fontStyle}}
-                className={`${defaultClass}__container-listFont__p ${defaultClass}__container-listFont__p--${theme}`}
-                key={index}
-                onClick={() => {
-                  handlerClick(f)
-                }}
-              >
-                {label}
-              </p>
-            </div>
-          )
-        })}
+        {fonts.map(fontOption => (
+          <div key={fontOption.label}>
+            <p
+              style={{fontFamily: fontStyle}}
+              className={`${baseClass}__container-listFont__p ${baseClass}__container-listFont__p--${theme}`}
+              onClick={() => handlerClick(fontOption)}
+            >
+              {fontOption.label}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
+
 export default ContItemFonts

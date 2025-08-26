@@ -1,14 +1,14 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import '../index.scss'
 import DarkMode from '../DarkMode/src/DarkMode'
 
 import LineVertical from '../../../assets/line-vertical.svg'
-import ModeFonts from '../ModeFonts'
+import ModeFonts from '../ModeFonts/src/ModeFonts'
 import IconBook from '../../../assets/iconBook.svg'
 import {AppContext} from '../../../context/AppContext'
 
-const Menu = (): JSX.Element => {
-  const {theme, fontStyle} = useContext(AppContext)
+const Menu = () => {
+  const {theme} = useContext(AppContext)
 
   const defaultClass = 'containMode'
 

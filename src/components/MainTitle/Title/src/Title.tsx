@@ -1,17 +1,9 @@
-import React, {useContext} from 'react'
+import {useContext} from 'react'
 import '../index.scss'
 import {AppContext} from '../../../../context/AppContext'
+import type {TitleProps} from '../../../../types/index'
 
-interface Phonetic {
-  text: string
-  audio: string
-}
-
-interface Props {
-  title: string
-  phonetic: Phonetic
-}
-const Title = ({title, phonetic}: Props) => {
+const Title = ({title, phonetic}: TitleProps) => {
   const {fontStyle, theme} = useContext(AppContext)
   const defaultClass = 'title'
 

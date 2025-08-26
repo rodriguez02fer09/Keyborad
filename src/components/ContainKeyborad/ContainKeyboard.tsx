@@ -11,75 +11,10 @@ import LineLongDesktop from '../../assets/line-long-desktop.svg'
 
 import MainInformation from '../MainInformation'
 import MainSource from '../MainSource'
+import type {FormatWord, State, Action} from './types'
+import {formatWord, getWordDefinition} from './utils'
 
 const defaultClass = 'containKeyboard-img'
-
-type Phonetic = {
-  text: string
-  audio: string
-}
-
-type Meaning = any
-
-type FormatWord = {
-  word: string
-  phonetic: Phonetic
-  meanings: Meaning
-  source: string[]
-}
-
-type State = {
-  word: string
-}
-
-type Action = {
-  type: 'update_word'
-  newWord: string
-}
-
-// Función auxiliar
-const buildPhonetics = (phonetics: Phonetic[]): Phonetic => {
-  return {
-    text: phonetics.find(p => p.text !== '')?.text || '',
-    audio: phonetics.find(p => p.audio !== '')?.audio || '',
-  }
-}
-
-const formatWord = (meaningWord: any): FormatWord => {
-  if (meaningWord?.word) {
-    const {word = '', phonetics, meanings, sourceUrls} = meaningWord
-    return {
-      word,
-      phonetic: buildPhonetics(phonetics),
-      meanings,
-      source: sourceUrls,
-    }
-  }
-
-  // fallback para evitar crash
-  return {
-    word: '',
-    phonetic: {text: '', audio: ''},
-    meanings: [],
-    source: [],
-  }
-}
-
-const getWordDefinition = async (word: string) => {
-  try {
-    const response = await fetch(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`,
-    )
-    const data = await response.json()
-    return {
-      ...data,
-      status: response.status,
-    }
-  } catch (err) {
-    console.error(err)
-    return {status: 500}
-  }
-}
 
 // Reducer
 const reducer = (state: State, action: Action): State => {
@@ -147,7 +82,8 @@ const ContainKeyboard: React.FC = () => {
             phonetic={word.phonetic}
             urlAudio={word.phonetic.audio}
           />
-          <MainInformation meanings={word.meanings} />
+          <MainInformation meanings={word.meanings ?? []} />
+
           <div className={defaultClass}>
             <img
               className={`${defaultClass}__image--mobile`}

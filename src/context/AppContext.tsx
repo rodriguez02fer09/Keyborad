@@ -1,15 +1,5 @@
-import React, {createContext, useState, type ReactNode, type FC} from 'react'
-
-export type ThemeType = 'dark' | 'light'
-export type FontStyleType = 'Sans Serif' | string
-
-export interface AppContextType {
-  theme: ThemeType
-  fontStyle: FontStyleType
-  toggleTheme: () => void
-  isDark: () => boolean
-  handleFontStyleChange: (font: FontStyleType) => void
-}
+import {createContext, useState, type ReactNode, type FC} from 'react'
+import type {AppContextType, ThemeType, FontStyleType} from '../types/index'
 
 const initialContext: AppContextType = {
   theme: 'light',

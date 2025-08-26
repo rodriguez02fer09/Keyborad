@@ -1,20 +1,7 @@
-import React from 'react'
 import '../index.scss'
 import Button from '../Button'
 import Title from '../Title'
-
-type Phonetic = {
-  text: string
-  audio: string
-}
-
-type Props = {
-  title: string
-  phonetic: Phonetic
-  urlAudio: string
-  // handlePlaying: (e: React.MouseEvent<HTMLButtonElement>) => void
-  //onFinishedPlaying: (e: React.MouseEvent<HTMLButtonElement>) => void
-}
+import type {MainTitleProps} from '../../../types/index'
 
 const MainTitle = ({
   title,
@@ -22,7 +9,7 @@ const MainTitle = ({
   urlAudio,
 }: //handlePlaying,
 //onFinishedPlaying,
-Props) => {
+MainTitleProps) => {
   return (
     <div className="ContainTitleButton">
       <Title
