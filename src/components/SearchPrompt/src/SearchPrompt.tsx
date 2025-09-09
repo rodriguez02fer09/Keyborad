@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import {useContext, type JSX} from 'react'
 import '../style/searchPrompt.scss'
 import Shape from '../../../assets/shape.svg'
 import {AppContext} from '../../../context/AppContext'
@@ -10,7 +10,7 @@ const SearchPrompt = ({
   findWord,
   empty,
   notFound,
-}: PropsSearchPrompt) => {
+}: PropsSearchPrompt): JSX.Element => {
   const {theme, fontStyle} = useContext(AppContext)
 
   const defaultClass = 'search-prompt'
